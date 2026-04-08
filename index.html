@@ -1205,8 +1205,9 @@ function closeNav() {
     var vH   = window.innerHeight;
     var p    = Math.max(0, Math.min(1, -rect.top / (sH - vH)));
 
-    /* Castle: cubic-out, starts at +72%, settles at -12% */
-    var ease    = 1 - Math.pow(1 - Math.min(p * 3.2, 1), 2.5);
+    /* Castle: starts rising as soon as section enters, spreads over full scroll */
+    var entered = Math.max(0, Math.min(1, (vH - rect.top) / vH)); /* 0→1 as top enters viewport */
+    var ease    = 1 - Math.pow(1 - Math.min(entered * 0.6 + p * 0.6, 1), 2.5);
     var castleY = 72 + (-12 - 72) * ease;
     castle.style.transform = 'translateX(-50%) translateY(' + castleY.toFixed(2) + '%)';
 
