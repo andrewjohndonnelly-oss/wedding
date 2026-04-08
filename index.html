@@ -1208,7 +1208,7 @@ function closeNav() {
     var p = Math.max(0, Math.min(1, (vH - rect.top) / (sH + vH)));
 
     /* Castle: smooth ease-out rise */
-    var ease    = 1 - Math.pow(1 - p, 4);
+    var ease    = 1 - Math.pow(1 - p, 5);
     var castleY = 72 + (-12 - 72) * ease;
     castle.style.transform = 'translateX(-50%) translateY(' + castleY.toFixed(2) + '%)';
 
