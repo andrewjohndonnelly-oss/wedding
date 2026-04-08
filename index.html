@@ -297,7 +297,6 @@ footer{background:var(--blue-dark);text-align:center;padding:3rem 2rem}
 /* ── VENUE SECTION ── */
 #venue{
   position:relative;
-  min-height:150vh;
   background:var(--dark);
   overflow:hidden;
 }
@@ -413,6 +412,7 @@ footer{background:var(--blue-dark);text-align:center;padding:3rem 2rem}
 .venue-content{
   position:relative;z-index:10;
   margin-top:-8vh;
+  background:var(--parchment);
 }
 .venue-content::before{
   content:'';display:block;height:28px;
@@ -439,7 +439,7 @@ footer{background:var(--blue-dark);text-align:center;padding:3rem 2rem}
 
 @media(max-width:680px){
   .venue-properties{grid-template-columns:1fr;gap:2.4rem}
-  #venue{min-height:170vh}
+  #venue{}
   .venue-content{margin-top:-10vh}
   .venue-castle{width:150vw;max-width:none}
   .venue-sky-title{top:16%}
@@ -1206,7 +1206,7 @@ function closeNav() {
     var p    = Math.max(0, Math.min(1, -rect.top / (sH - vH)));
 
     /* Castle: cubic-out, starts at +72%, settles at -12% */
-    var ease    = 1 - Math.pow(1 - Math.min(p * 2.2, 1), 3);
+    var ease    = 1 - Math.pow(1 - Math.min(p * 3.2, 1), 2.5);
     var castleY = 72 + (-12 - 72) * ease;
     castle.style.transform = 'translateX(-50%) translateY(' + castleY.toFixed(2) + '%)';
 
