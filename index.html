@@ -1201,13 +1201,13 @@ function closeNav() {
 
   function tick(){
     var rect = section.getBoundingClientRect();
-    var sH   = section.offsetHeight;
     var vH   = window.innerHeight;
-    var p    = Math.max(0, Math.min(1, -rect.top / (sH - vH)));
 
-    /* Castle: starts rising as soon as section enters, spreads over full scroll */
-    var entered = Math.max(0, Math.min(1, (vH - rect.top) / vH)); /* 0→1 as top enters viewport */
-    var ease    = 1 - Math.pow(1 - Math.min(entered * 0.6 + p * 0.6, 1), 2.5);
+    /* p = 0 when section top hits bottom of viewport, climbs as you scroll */
+    var p = Math.max(0, Math.min(1, (vH - rect.top) / (vH * 2.2)));
+
+    /* Castle: smooth ease-out rise */
+    var ease    = 1 - Math.pow(1 - p, 2);
     var castleY = 72 + (-12 - 72) * ease;
     castle.style.transform = 'translateX(-50%) translateY(' + castleY.toFixed(2) + '%)';
 
