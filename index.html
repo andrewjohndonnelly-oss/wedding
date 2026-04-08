@@ -634,15 +634,15 @@ footer{background:var(--blue-dark);text-align:center;padding:3rem 2rem}
     <div class="venue-inner">
       <div class="venue-properties">
         <div class="venue-property venue-anim">
-          <span class="venue-prop-eyebrow">Where we celebrate</span>
+          <span class="venue-prop-eyebrow">The ceremony & celebration</span>
           <h3 class="venue-prop-name">The Lodge at Ashford Castle</h3>
-          <p class="venue-prop-desc">Nestled within the ancient estate of Ashford Castle on the shores of Lough Corrib, The Lodge is where the ceremony takes place. Intimate and unhurried, it sits at the edge of the woodland with views across the river and grounds. While the grandeur of the Castle looms nearby, The Lodge has a warmth entirely its own — the right place for something as personal as this.</p>
+          <p class="venue-prop-desc">Set within the ancient estate on the shores of Lough Corrib, The Lodge is where we'll gather to get married. Intimate and unhurried, it sits at the edge of the woodland with views across the river and grounds — the right place for something as personal as this.</p>
           <div class="venue-prop-rule"></div>
         </div>
         <div class="venue-property venue-anim">
-          <span class="venue-prop-eyebrow">Where we stay</span>
+          <span class="venue-prop-eyebrow">The estate</span>
           <h3 class="venue-prop-name">Ashford Castle</h3>
-          <p class="venue-prop-desc">Guests are invited to stay within the Castle itself — one of Ireland's great five-star hotels, and a place that rewards a slow arrival. Stone corridors, candlelit dining rooms, and a mile of private lakeshore await. A number of rooms have been reserved; details on booking will follow with your invitation.</p>
+          <p class="venue-prop-desc">The Lodge and the Castle share the same grounds — guests are free to roam between the two. Stone corridors, candlelit dining rooms, and a mile of private lakeshore are all yours to enjoy across the weekend. A number of rooms within the Castle have been reserved; booking details will follow with your invitation.</p>
           <div class="venue-prop-rule"></div>
         </div>
       </div>
@@ -1201,10 +1201,11 @@ function closeNav() {
 
   function tick(){
     var rect = section.getBoundingClientRect();
+    var sH   = section.offsetHeight;
     var vH   = window.innerHeight;
 
-    /* p = 0 when section top hits bottom of viewport, climbs as you scroll */
-    var p = Math.max(0, Math.min(1, (vH - rect.top) / (vH * 2.2)));
+    /* p = 0 when section top hits bottom of viewport, 1 when section bottom hits bottom of viewport */
+    var p = Math.max(0, Math.min(1, (vH - rect.top) / (sH + vH)));
 
     /* Castle: smooth ease-out rise */
     var ease    = 1 - Math.pow(1 - p, 2);
