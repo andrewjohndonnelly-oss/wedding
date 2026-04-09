@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Laura & Andrew · July 2, 2027</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23d8e0ec'/%3E%3Ctext y='54' font-size='48' font-family='Georgia,serif' font-style='italic' fill='%234a5e82' x='50' text-anchor='middle'%3EL%26amp%3BA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -15,6 +17,11 @@ html{scroll-behavior:smooth}
   --dark:#1e2330;--text-body:#5a6f8a;--white:#faf8f4;--sage:#8fa888;--sage-dark:#6b8f6e;
 }
 body{font-family:'Jost',sans-serif;font-weight:300;background:var(--dark);color:var(--blue);overflow-x:hidden}
+
+/* ── FOCUS VISIBLE — keyboard nav indicator ── */
+:focus{outline:none}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:2px}
+.env-pw-input:focus-visible,.env-pw-btn:focus-visible,.rsvp-submit:focus-visible{outline:2px solid var(--blue-dark);outline-offset:3px}
 
 /* ── ENVELOPE SCREEN ── */
 #env-screen{
@@ -31,7 +38,7 @@ body{font-family:'Jost',sans-serif;font-weight:300;background:var(--dark);color:
 #env-screen.exit{opacity:0;pointer-events:none}
 
 .env-header{text-align:center;margin-bottom:2rem;animation:fadeUp .9s ease both}
-.env-header-small{font-family:'Jost',sans-serif;font-size:.57rem;letter-spacing:.32em;text-transform:uppercase;color:rgba(74,94,130,.55);font-weight:400;display:block;margin-bottom:.5rem}
+.env-header-small{font-family:'Jost',sans-serif;font-size:.57rem;letter-spacing:.32em;text-transform:uppercase;color:rgba(74,94,130,.90);font-weight:400;display:block;margin-bottom:.5rem}
 .env-header-big{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5vw,3.8rem);font-style:italic;font-weight:300;color:var(--blue-dark);line-height:.92}
 
 .env-stage{position:relative;width:min(72vw,680px);aspect-ratio:460/300;animation:fadeUp .9s .12s ease both;perspective:1200px}
@@ -55,11 +62,11 @@ body{font-family:'Jost',sans-serif;font-weight:300;background:var(--dark);color:
 .env-pw{position:absolute;left:50%;top:84%;transform:translateX(-50%) translateY(-50%);text-align:center;width:72%;z-index:8;transition:opacity .5s ease;opacity:0;pointer-events:none}
 .env-pw.show{opacity:1;pointer-events:auto}
 .env-pw.hide{opacity:0;pointer-events:none}
-.env-pw-label{font-family:'Jost',sans-serif;font-size:.54rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(74,94,130,.65);font-weight:400;margin-bottom:.6rem}
-.env-pw-input{background:transparent;border:none;border-bottom:.5px solid rgba(74,94,130,.35);padding:.4rem 0;width:130px;font-family:'Jost',sans-serif;font-size:1rem;/* was .9rem — 16px min prevents iOS auto-zoom */transform:scale(.9);transform-origin:center top;display:block;margin:0 auto;font-weight:300;color:var(--blue-dark);text-align:center;letter-spacing:.14em;outline:none;transition:border-color .25s}
+.env-pw-label{font-family:'Jost',sans-serif;font-size:.54rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(74,94,130,.90);font-weight:400;margin-bottom:.6rem}
+.env-pw-input{background:transparent;border:none;border-bottom:.5px solid rgba(74,94,130,.35);padding:.4rem 0;width:130px;font-family:'Jost',sans-serif;font-size:1rem;/* was .9rem — 16px min prevents iOS auto-zoom */transform:scale(.9);transform-origin:center top;display:block;margin:0 auto;font-weight:300;color:var(--blue-dark);text-align:center;letter-spacing:.14em;transition:border-color .25s}
 .env-pw-input::placeholder{color:rgba(106,127,168,.32)}
 .env-pw-input:focus{border-color:var(--blue)}
-.env-pw-btn{display:block;margin:.65rem auto 0;padding:.48rem 2rem;background:transparent;border:.5px solid rgba(74,94,130,.35);font-family:'Jost',sans-serif;font-size:.54rem;letter-spacing:.24em;text-transform:uppercase;color:var(--blue-dark);cursor:pointer;transition:border-color .25s,color .25s}
+.env-pw-btn{display:flex;align-items:center;justify-content:center;margin:.65rem auto 0;padding:.48rem 2rem;min-height:44px;min-width:100px;background:transparent;border:.5px solid rgba(74,94,130,.35);font-family:'Jost',sans-serif;font-size:.54rem;letter-spacing:.24em;text-transform:uppercase;color:var(--blue-dark);cursor:pointer;transition:border-color .25s,color .25s}
 .env-pw-btn:hover{border-color:var(--blue);color:var(--blue-dark)}
 .env-pw-error{font-size:.58rem;color:rgba(160,100,100,.75);letter-spacing:.08em;margin-top:.4rem;min-height:.85rem;font-family:'Jost',sans-serif}
 
@@ -76,7 +83,7 @@ transition:transform 5s cubic-bezier(.12,.92,.15,1),opacity 1.2s ease}
 .env-card-dt{font-family:'Jost',sans-serif;font-size:.48rem;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);margin-top:.3rem;font-weight:300}
 .env-card-rl{width:18px;height:.5px;background:var(--blue-light);opacity:.4;margin:.6rem auto 0}
 
-.env-footer{font-family:'Jost',sans-serif;font-size:.55rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(74,94,130,.75);margin-top:1.6rem;animation:fadeUp .9s .18s ease both}
+.env-footer{font-family:'Jost',sans-serif;font-size:.55rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(74,94,130,.90);margin-top:1.6rem;animation:fadeUp .9s .18s ease both}
 
 /* ── MAIN SITE ──
    Key: visibility:hidden keeps it in the layout/paint tree
@@ -147,7 +154,7 @@ nav.scrolled .nav-hamburger span{background:var(--blue-dark)}
 .cd-b{text-align:center}
 .cd-n{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:300;line-height:1;color:rgba(242,237,228,.92);text-shadow:0 1px 12px rgba(0,0,0,.22)}
 .cd-l{font-family:'Jost',sans-serif;font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,237,228,.48);margin-top:.16rem;font-weight:400}
-.cd-sep{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:rgba(242,237,228,.24);align-self:flex-start;padding-top:.4rem}
+.cd-sep{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:rgba(242,237,228,.55);align-self:flex-start;padding-top:.4rem}
 .h-scroll{position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);font-family:'Jost',sans-serif;font-size:.5rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(242,237,228,.42);display:flex;flex-direction:column;align-items:center;gap:.5rem;animation:scBob 2.5s ease infinite}
 .h-scroll-ln{width:.5px;height:24px;background:rgba(242,237,228,.28)}
 @keyframes scBob{0%,100%{transform:translateX(-50%) translateY(0);opacity:.38}50%{transform:translateX(-50%) translateY(5px);opacity:.62}}
@@ -175,7 +182,7 @@ nav.scrolled .nav-hamburger span{background:var(--blue-dark)}
 .tl-dot{width:11px;height:11px;border-radius:50%;border:1.5px solid rgba(106,127,168,.4);background:var(--white);transition:background .45s ease,border-color .45s ease,transform .45s ease,box-shadow .45s ease;flex-shrink:0}
 .tl-dot.lit{background:var(--blue);border-color:var(--blue);box-shadow:0 0 0 4px rgba(106,127,168,.12)}
 .tl-dot.lit.ac{transform:scale(1.3);box-shadow:0 0 0 6px rgba(107,143,110,.18)}
-.tl-date-tag{font-family:'Jost',sans-serif;font-size:.44rem;letter-spacing:.15em;text-transform:uppercase;color:var(--blue-light);margin-top:.6rem;white-space:nowrap;writing-mode:vertical-rl;transform:rotate(180deg);line-height:1;opacity:.6}
+.tl-date-tag{font-family:'Jost',sans-serif;font-size:.44rem;letter-spacing:.15em;text-transform:uppercase;color:var(--blue);margin-top:.6rem;white-space:nowrap;writing-mode:vertical-rl;transform:rotate(180deg);line-height:1}
 .tl-card.on{opacity:1;transform:translateX(0)}
 /* js-tl class added by JS to enable animations once layout is ready */
 .js-tl .tl-item.tl-left .tl-card{opacity:0;transform:translateX(-28px)}
@@ -201,7 +208,7 @@ nav.scrolled .nav-hamburger span{background:var(--blue-dark)}
 
 /* TRAVEL */
 #trav{background:var(--blue-dark);overflow:hidden}
-#trav .stag{color:var(--blue-pale);opacity:.58}
+#trav .stag{color:#cfd8e5;opacity:1}
 #trav .stit{color:var(--blue-pale)}
 #trav .stit em{color:var(--blue-light)}
 #trav .rule{background:var(--blue-light)}
@@ -210,10 +217,10 @@ nav.scrolled .nav-hamburger span{background:var(--blue-dark)}
 @media(max-width:600px){.tg{grid-template-columns:1fr}}
 .tc{padding:1.7rem 1.5rem;border:.5px solid rgba(143,163,196,.22);background:rgba(255,255,255,.05);transition:transform .4s ease,box-shadow .4s ease,background .4s ease;transform-style:preserve-3d;will-change:transform}
 @media(hover:hover){.tc:hover{transform:perspective(600px) rotateX(3deg) rotateY(-2deg) translateY(-6px);box-shadow:0 20px 48px rgba(0,0,0,.25),0 2px 8px rgba(0,0,0,.12);background:rgba(255,255,255,.09)}}
-.tcl{font-family:'Jost',sans-serif;font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-light);margin-bottom:.45rem;font-weight:400;opacity:.8}
+.tcl{font-family:'Jost',sans-serif;font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:#d0d9e8;margin-bottom:.45rem;font-weight:400}
 .tc h3{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:400;color:#fff;margin-bottom:.55rem}
 .tc p{font-family:'Jost',sans-serif;font-size:.81rem;line-height:1.85;color:rgba(216,224,236,.78);font-weight:300}
-.tc a{color:var(--blue-light);text-underline-offset:3px}
+.tc a{color:var(--parchment);text-underline-offset:3px;text-decoration-color:rgba(242,237,228,.35)}
 .tc strong{color:var(--blue-pale);font-weight:400}
 
 /* GALLERY */
@@ -237,7 +244,7 @@ nav.scrolled .nav-hamburger span{background:var(--blue-dark)}
 .rsvp-left .stit em{color:rgba(143,163,196,.85)}
 .rsvp-left .rule{background:rgba(143,163,196,.35)}
 .rsvp-left .sbody{color:rgba(216,224,236,.6);max-width:100%}
-.rsvp-dl{font-family:'Jost',sans-serif;font-size:.67rem;letter-spacing:.12em;color:rgba(143,163,196,.45);margin-top:1.3rem;font-weight:300}
+.rsvp-dl{font-family:'Jost',sans-serif;font-size:.67rem;letter-spacing:.12em;color:rgba(143,163,196,.82);margin-top:1.3rem;font-weight:300}
 .rsvp-card{position:relative;z-index:3;opacity:1;background:rgba(242,237,228,.97);padding:2.1rem 1.9rem;box-shadow:0 24px 70px rgba(0,0,0,.45)}
 #suggestions{max-height:180px;overflow-y:auto;border:.5px solid rgba(106,127,168,.2);margin-top:.2rem;background:var(--parchment);display:none}
 .suggestion-item{padding:.6rem .9rem;font-family:Jost,sans-serif;font-size:.84rem;color:var(--blue-dark);cursor:pointer;transition:background .15s;font-weight:300}
@@ -255,7 +262,7 @@ nav.scrolled .nav-hamburger span{background:var(--blue-dark)}
 .rg{display:flex;gap:1.2rem;flex-wrap:wrap;padding-top:.05rem}
 .rg label{display:flex;align-items:center;gap:.35rem;font-family:'Jost',sans-serif;font-size:.82rem;color:var(--blue-dark);cursor:pointer;font-weight:300}
 .rg input[type=radio]{accent-color:var(--blue)}
-.rsvp-submit{margin-top:.25rem;padding:.82rem 0;width:100%;background:var(--blue-dark);color:var(--blue-pale);border:none;font-family:'Jost',sans-serif;font-size:.63rem;letter-spacing:.26em;text-transform:uppercase;cursor:pointer;font-weight:400;transition:background .3s}
+.rsvp-submit{margin-top:.25rem;padding:.82rem 0;min-height:44px;width:100%;background:var(--blue-dark);color:var(--blue-pale);border:none;font-family:'Jost',sans-serif;font-size:.63rem;letter-spacing:.26em;text-transform:uppercase;cursor:pointer;font-weight:400;transition:background .3s}
 .rsvp-submit:hover{background:var(--blue)}
 .ty{display:none;padding:2rem;text-align:center;font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-style:italic;color:var(--blue-dark);font-weight:300;line-height:1.5}
 
@@ -264,7 +271,7 @@ nav.scrolled .nav-hamburger span{background:var(--blue-dark)}
 #rsvp-popup.show{opacity:1;pointer-events:all}
 .popup-card{background:var(--parchment);padding:2.8rem 2.4rem;text-align:center;max-width:380px;width:90%;box-shadow:0 30px 80px rgba(0,0,0,.4);transform:translateY(16px);transition:transform .5s ease;position:relative}
 #rsvp-popup.show .popup-card{transform:translateY(0)}
-.popup-close{position:absolute;top:.8rem;right:1rem;background:none;border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:.7rem;color:rgba(106,127,168,.4);letter-spacing:.1em;transition:color .2s}
+.popup-close{position:absolute;top:.4rem;right:.5rem;background:none;border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:.7rem;color:rgba(106,127,168,.4);letter-spacing:.1em;transition:color .2s;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center;padding:.5rem}
 .popup-close:hover{color:var(--blue)}
 .popup-tag{font-family:'Jost',sans-serif;font-size:.55rem;letter-spacing:.28em;text-transform:uppercase;color:var(--blue-light);font-weight:400;margin-bottom:.7rem}
 .popup-title{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-style:italic;font-weight:300;color:var(--blue-dark);line-height:1.1;margin-bottom:.6rem}
@@ -292,6 +299,23 @@ footer{background:var(--blue-dark);text-align:center;padding:3rem 2rem}
 .rv-r.on{opacity:1;transform:none}
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* ── MOBILE BODY TEXT ── */
+@media(max-width:640px){
+  .sbody{font-size:.94rem;line-height:1.85}
+  .ed{font-size:.88rem}
+  .tc p{font-size:.88rem}
+  .rg label{font-size:.88rem}
+  .popup-sub{font-size:.88rem}
+  .fg input::placeholder,.fg textarea::placeholder{font-size:.88rem}
+}
+
+/* ── TABLET BREAKPOINT ── */
+@media(max-width:768px){
+  .tg{grid-template-columns:1fr}
+  .rsvp-inner{grid-template-columns:1fr;gap:2.5rem;padding:4rem 2rem}
+  .si{padding:4rem 2rem}
+}
 
 
 /* ── VENUE SECTION ── */
@@ -528,8 +552,8 @@ footer{background:var(--blue-dark);text-align:center;padding:3rem 2rem}
 
     <!-- Password input and invitation card — outside the flipping element -->
     <div class="env-pw" id="envPw">
-      <div class="env-pw-label">Enter password to open</div>
-      <input class="env-pw-input" id="pwIn" type="text" placeholder="password" autocomplete="off" spellcheck="false">
+      <div class="env-pw-label" id="pw-label">Enter password to open</div>
+      <input class="env-pw-input" id="pwIn" type="text" aria-labelledby="pw-label" placeholder="password" autocomplete="off" spellcheck="false">
       <button class="env-pw-btn" onclick="checkPw()">Open</button>
       <div class="env-pw-error" id="pwErr">&nbsp;</div>
     </div>
@@ -582,7 +606,7 @@ footer{background:var(--blue-dark);text-align:center;padding:3rem 2rem}
     </button>
   </nav>
 <div id="main">
-  <section id="hero">
+  <section id="hero" aria-label="Hero — Laura and Andrew, July 2 2027, Ashford Castle, Ireland">
     <div class="h-img" style="background-image:url('photo-1.jpg')"></div>
     <div class="h-ov"></div>
     <div class="h-ct">
@@ -733,10 +757,10 @@ footer{background:var(--blue-dark);text-align:center;padding:3rem 2rem}
     <div class="rule rv"></div>
     <p class="sbody rv">Ashford Castle sits on the shores of Lough Corrib in the heart of County Mayo — one of Ireland's most breathtaking corners. We have gathered everything you need to make your journey as smooth as possible.</p>
     <div class="tg">
-      <div class="tc rv-l"><div class="tcl">Getting Here</div><h3>Flying In</h3><p>The nearest airport is <strong>Ireland West Airport Knock</strong> (NOC), approximately 45 minutes from Ashford Castle. Dublin Airport (DUB) is roughly 2.5 hours by car. We recommend hiring a driver or renting a car to enjoy the beautiful countryside drive.</p></div>
-      <div class="tc rv-r"><div class="tcl">Where to Stay</div><h3>Staying at Ashford Castle</h3><p>We have reserved a room block at <a href="https://www.thelodgeac.com" target="_blank" rel="noopener" style="color:var(--blue);text-decoration:underline;text-decoration-color:rgba(106,127,168,.3)">The Lodge at Ashford Castle</a>. Please mention "Laura &amp; Andrew Wedding" when calling <a href="tel:+35394954003">+353 94 954 0003</a> or emailing <a href="/cdn-cgi/l/email-protection#512334223423273025383e3f2211302239373e2335323022253d347f323e3c"><span class="__cf_email__" data-cfemail="e89a8d9b8d9a9e899c8187869ba8899b808e879a8c8b899b9c848dc68b8785">[email&#160;protected]</span></a>. Block rates available until <strong>May 1, 2027</strong>.</p></div>
+      <div class="tc rv-l"><div class="tcl">Getting Here</div><h3>Flying In</h3><p>The nearest airport is <strong>Ireland West Airport Knock</strong> (NOC), approximately 45 minutes from Ashford Castle. <strong>Dublin Airport</strong> (DUB) is roughly 2.5 hours by car. We recommend hiring a driver or renting a car to enjoy the beautiful countryside drive.</p></div>
+      <div class="tc rv-r"><div class="tcl">Where to Stay</div><h3>Staying at Ashford Castle</h3><p>We have reserved a room block at <a href="https://www.thelodgeac.com" target="_blank" rel="noopener" style="color:var(--parchment);text-decoration:underline;text-decoration-color:rgba(242,237,228,.35)">The Lodge at Ashford Castle</a>. Please mention "Laura &amp; Andrew Wedding" when calling <a href="tel:+35394954003">+353 94 954 0003</a> or emailing <a href="/cdn-cgi/l/email-protection#512334223423273025383e3f2211302239373e2335323022253d347f323e3c"><span class="__cf_email__" data-cfemail="e89a8d9b8d9a9e899c8187869ba8899b808e879a8c8b899b9c848dc68b8785">[email&#160;protected]</span></a>. Block rates available until <strong>May 1, 2027</strong>.</p></div>
       <div class="tc rv-l"><div class="tcl">Nearby Options</div><h3>Local Accommodations</h3><p>For those seeking alternatives nearby, we recommend <strong>Cong Village</strong> (a short walk from the castle), <strong>Ballinrobe</strong>, or <strong>Castlebar</strong>. A shuttle service will run between the castle and Cong village throughout the weekend.</p></div>
-      <div class="tc rv-r"><div class="tcl">While You're There</div><h3>Exploring County Mayo</h3><p>We encourage you to arrive a day early or linger an extra night. From the Connemara mountains to the wild Atlantic coastline, the west of Ireland offers extraordinary beauty at every turn. <a href="https://www.mayo.ie/visit" target="_blank" rel="noopener" style="color:var(--blue-light);text-decoration:underline;text-decoration-color:rgba(143,163,196,.4)">Explore County Mayo →</a></p></div>
+      <div class="tc rv-r"><div class="tcl">While You're There</div><h3>Exploring County Mayo</h3><p>We encourage you to arrive a day early or linger an extra night. From the Connemara mountains to the wild Atlantic coastline, the west of Ireland offers extraordinary beauty at every turn. <a href="https://www.mayo.ie/visit" target="_blank" rel="noopener" style="color:var(--parchment);text-decoration:underline;text-decoration-color:rgba(242,237,228,.35)">Explore County Mayo →</a></p></div>
     </div>
   </div></div>
   <div id="gal"><div class="si" style="padding-bottom:1.5rem">
@@ -744,9 +768,9 @@ footer{background:var(--blue-dark);text-align:center;padding:3rem 2rem}
     <h2 class="stit rv"><em>Laura &amp; Andrew</em></h2>
     <div class="rule rv"></div>
     <div class="pm rv">
-      <div class="pf pt"><img style="object-position:80% center" src="photo-1.jpg" alt="Laura and Andrew walking toward the sunset"></div>
-      <div class="pf rv-r" style="transition-delay:.1s"><img src="rsvp-bg.jpg" alt="Laura and Andrew on a bench at sunset"></div>
-      <div class="pf rv-r" style="transition-delay:.22s"><img src="photo-3.jpg" alt="Laura and Andrew smiling at the beach"></div>
+      <div class="pf pt"><img loading="lazy" style="object-position:80% center" src="photo-1.jpg" alt="Laura and Andrew walking toward the sunset"></div>
+      <div class="pf rv-r" style="transition-delay:.1s"><img loading="lazy" src="rsvp-bg.jpg" alt="Laura and Andrew on a bench at sunset"></div>
+      <div class="pf rv-r" style="transition-delay:.22s"><img loading="lazy" src="photo-3.jpg" alt="Laura and Andrew smiling at the beach"></div>
     </div>
   </div></div>
 
@@ -768,29 +792,29 @@ footer{background:var(--blue-dark);text-align:center;padding:3rem 2rem}
         <div id="rsvp-party-list" style="display:none;text-align:center;margin-bottom:1rem;padding:.6rem .8rem;background:rgba(106,127,168,.08);border:.5px solid rgba(106,127,168,.18)"></div>
         <form class="rf" id="rf" onsubmit="doRsvp(event)">
           <div class="fg">
-            <label>Your Name</label>
+            <label for="nameField">Your Name</label>
             <input type="text" id="nameField" placeholder="Start typing your name..." autocomplete="off"
               oninput="searchGuests(this.value)" onkeydown="searchKeydown(event)">
             <div id="suggestions"></div>
-            <div id="lookup-err" style="font-family:Jost,sans-serif;font-size:.65rem;color:rgba(160,100,100,.75);min-height:.85rem;margin-top:.3rem;letter-spacing:.06em">&nbsp;</div>
+            <div id="lookup-err" role="alert" style="font-family:Jost,sans-serif;font-size:.65rem;color:rgba(160,100,100,.75);min-height:.85rem;margin-top:.3rem;letter-spacing:.06em">&nbsp;</div>
           </div>
-          <div class="fg"><label>Email Address</label><input type="email" placeholder="your@email.com"></div>
-          <div class="fg"><label>Attendance</label>
-            <div class="rg">
+          <div class="fg"><label for="emailField">Email Address</label><input type="email" id="emailField" placeholder="your@email.com"></div>
+          <div class="fg"><label id="att-label">Attendance</label>
+            <div class="rg" role="radiogroup" aria-labelledby="att-label">
               <label><input type="radio" name="att" value="yes"> Joyfully accepts</label>
               <label><input type="radio" name="att" value="no"> Regretfully declines</label>
             </div>
           </div>
           <div class="frow">
-            <div class="fg"><label>Guests</label>
+            <div class="fg"><label for="guestCount">Guests</label>
               <select id="guestCount"><option selected>1</option><option>2</option><option>3</option><option>4</option></select>
             </div>
-            <div class="fg"><label>Events</label>
-              <select><option>All events</option><option>Ceremony &amp; Dinner</option><option>Ceremony only</option></select>
+            <div class="fg"><label for="eventsSelect">Events</label>
+              <select id="eventsSelect"><option>All events</option><option>Ceremony &amp; Dinner</option><option>Ceremony only</option></select>
             </div>
           </div>
-          <div class="fg"><label>Dietary Requirements</label><input type="text" placeholder="Any allergies or needs?"></div>
-          <div class="fg"><label>A Note for the Couple</label><textarea placeholder="A kind word or song request..."></textarea></div>
+          <div class="fg"><label for="dietaryField">Dietary Requirements</label><input type="text" id="dietaryField" placeholder="Any allergies or needs?"></div>
+          <div class="fg"><label for="noteField">A Note for the Couple</label><textarea id="noteField" placeholder="A kind word or song request..."></textarea></div>
           <button type="submit" class="rsvp-submit">Send RSVP</button>
         </form>
       </div>
@@ -886,7 +910,15 @@ function launchSite() {
     startCd();
     initParallax();
     initReveal();
-    setTimeout(showPopup, 1200);
+    /* Show RSVP popup after first meaningful scroll, not immediately */
+    var popupShown = false;
+    function onFirstScroll() {
+      if (popupShown || window.scrollY < 80) return;
+      popupShown = true;
+      window.removeEventListener('scroll', onFirstScroll);
+      setTimeout(showPopup, 600);
+    }
+    window.addEventListener('scroll', onFirstScroll, { passive: true });
   }, 600);
 }
 
@@ -1136,11 +1168,11 @@ function doRsvp(e) {
 
   // Gather values
   var att      = (form.querySelector('input[name="att"]:checked') || {}).value || '';
-  var email    = form.querySelector('input[type="email"]').value;
+  var email    = document.getElementById('emailField').value;
   var guests   = document.getElementById('guestCount').value;
-  var events   = form.querySelectorAll('select')[1].value;
-  var dietary  = form.querySelectorAll('input[type="text"]')[1].value;
-  var note     = form.querySelector('textarea').value;
+  var events   = document.getElementById('eventsSelect').value;
+  var dietary  = document.getElementById('dietaryField').value;
+  var note     = document.getElementById('noteField').value;
 
   var payload = {
     name:     (function() {
