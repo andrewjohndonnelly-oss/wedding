@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laura & Andrew · July 2, 2027</title>
+<meta name="description" content="Laura Cottrell and Andrew Donnelly invite you to their wedding on Friday, July 2, 2027 at The Lodge at Ashford Castle, County Mayo, Ireland.">
+<meta name="theme-color" content="#1C2B4A">
+<meta property="og:title" content="Laura & Andrew · July 2, 2027">
+<meta property="og:description" content="Join us at The Lodge at Ashford Castle, County Mayo, Ireland — Friday, July 2, 2027.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="photo-1.jpg">
+<meta property="og:image:alt" content="Laura and Andrew">
+<meta property="og:url" content="">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Laura & Andrew · July 2, 2027">
+<meta name="twitter:description" content="Join us at The Lodge at Ashford Castle, County Mayo, Ireland — Friday, July 2, 2027.">
+<meta name="twitter:image" content="photo-1.jpg">
+<link rel="alternate" type="text/calendar" href="wedding.ics" title="Wedding — add to calendar">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<script>document.addEventListener('DOMContentLoaded',function(){try{function abs(sel,attr){var m=document.querySelector(sel);if(m&&m.getAttribute(attr))m.setAttribute(attr,new URL(m.getAttribute(attr),document.baseURI).href);}abs('meta[property="og:image"]','content');abs('meta[name="twitter:image"]','content');var ou=document.querySelector('meta[property="og:url"]');if(ou)ou.setAttribute('content',location.href.split('#')[0]);}catch(e){}});</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+:root{
+  --parchment:#F5F3EB;--parchment2:#ede9df;--parchment3:#e0dcd0;
+  --blue:#7A9DB5;--blue-light:#B8CEDF;--blue-pale:#DDE8F3;--blue-dark:#1C2B4A;
+  --dark:#1C2B4A;--text-body:#7A9DB5;--white:#F5F3EB;--sage:#8FAF8A;--sage-dark:#6B9170;
+  --petal:#F6BFCF;--powder:#DDE8F3;--sky:#B8CEDF;--cream:#F5F3EB;--slate:#7A9DB5;--forest:#6B9170;--navy:#1C2B4A;
+}
+body{font-family:'Jost',sans-serif;font-weight:300;background:var(--dark);color:var(--blue);overflow-x:hidden}
+
+/* ── FOCUS VISIBLE — keyboard nav indicator ── */
+:focus{outline:none}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:2px}
+.env-pw-input:focus-visible,.env-pw-btn:focus-visible,.rsvp-submit:focus-visible{outline:2px solid var(--blue-dark);outline-offset:3px}
+
+/* ── ENVELOPE SCREEN ── */
+#env-screen{
+  position:fixed;inset:0;z-index:1000;
+  background:var(--blue-pale);
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  transition:opacity .8s ease;
+}
+#env-screen::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 80% 70% at 50% 50%,transparent 40%,rgba(28,43,74,.08) 100%);
+}
+#env-screen.exit{opacity:0;pointer-events:none}
+
+.env-header{text-align:center;margin-bottom:2rem;animation:fadeUp .9s ease both}
+.env-header-small{font-family:'Jost',sans-serif;font-size:.57rem;letter-spacing:.32em;text-transform:uppercase;color:rgba(28,43,74,.90);font-weight:400;display:block;margin-bottom:.5rem}
+.env-header-big{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5vw,3.8rem);font-style:italic;font-weight:300;color:var(--blue-dark);line-height:.92}
+
+.env-stage{position:relative;width:min(72vw,680px);aspect-ratio:460/300;animation:fadeUp .9s .12s ease both;perspective:1200px}
+@media(max-width:600px){.env-stage{width:92vw}}
+.envelope{position:absolute;inset:0;width:100%;height:100%;transform-style:preserve-3d;transition:transform 1.4s cubic-bezier(.4,0,.2,1);transform:rotateY(0deg)}
+.envelope.flip{transform:rotateY(180deg)}
+.env-back{transform:rotateY(180deg);backface-visibility:hidden;-webkit-backface-visibility:hidden;position:absolute;inset:0;width:100%;height:100%}
+.env-front{backface-visibility:hidden;-webkit-backface-visibility:hidden;position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.env-svg-wrap{position:relative;width:100%;height:100%}
+.env-svg-wrap svg{width:100%;height:100%;display:block;filter:drop-shadow(0 40px 80px rgba(28,43,74,.25))}
+
+#envFlapGroup{
+  transform-origin:50% 0%;transform-box:fill-box;
+  transition:transform 1.1s cubic-bezier(.35,0,.1,1);
+}
+#envFlapGroup.open{transform:rotateX(-185deg)}
+
+.wax-seal{position:absolute;left:50%;top:49.5%;transform:translate(-50%,-50%);z-index:10;transition:opacity .4s ease,transform .4s ease}
+.wax-seal.hide{opacity:0;transform:translate(-50%,-50%) scale(.6);pointer-events:none}
+
+.env-pw{position:absolute;left:50%;top:84%;transform:translateX(-50%) translateY(-50%);text-align:center;width:72%;z-index:8;transition:opacity .5s ease;opacity:0;pointer-events:none}
+.env-pw.show{opacity:1;pointer-events:auto}
+.env-pw.hide{opacity:0;pointer-events:none}
+.env-pw-label{font-family:'Jost',sans-serif;font-size:.54rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(28,43,74,.90);font-weight:400;margin-bottom:.6rem}
+.env-pw-input{background:transparent;border:none;border-bottom:.5px solid rgba(28,43,74,.35);padding:.4rem 0;width:130px;font-family:'Jost',sans-serif;font-size:1rem;/* was .9rem — 16px min prevents iOS auto-zoom */transform:scale(.9);transform-origin:center top;display:block;margin:0 auto;font-weight:300;color:var(--blue-dark);text-align:center;letter-spacing:.14em;transition:border-color .25s}
+.env-pw-input::placeholder{color:rgba(122,157,181,.32)}
+.env-pw-input:focus{border-color:var(--blue)}
+.env-pw-btn{display:flex;align-items:center;justify-content:center;margin:.65rem auto 0;padding:.48rem 2rem;min-height:44px;min-width:100px;background:transparent;border:.5px solid rgba(28,43,74,.35);font-family:'Jost',sans-serif;font-size:.54rem;letter-spacing:.24em;text-transform:uppercase;color:var(--blue-dark);cursor:pointer;transition:border-color .25s,color .25s}
+.env-pw-btn:hover{border-color:var(--blue);color:var(--blue-dark)}
+.env-pw-error{font-size:.58rem;color:rgba(180,100,100,.75);letter-spacing:.08em;margin-top:.4rem;min-height:.85rem;font-family:'Jost',sans-serif}
+
+.env-card{position:absolute;left:50%;bottom:8%;transform:translateX(-50%) translateY(0);width:74%;background:#F5F3EB;border:none;padding:2rem 1.8rem 1.8rem;text-align:center;z-index:6;opacity:0;pointer-events:none;
+box-shadow:0 -8px 40px rgba(0,0,0,.18),0 2px 0 rgba(210,205,190,.4),inset 0 0 0 1px rgba(190,180,160,.2);
+transition:transform 5s cubic-bezier(.12,.92,.15,1),opacity 1.2s ease}
+.env-card::before{content:'';position:absolute;inset:6px;border:0.5px solid rgba(246,191,207,.4);pointer-events:none}
+.env-card::after{content:'';position:absolute;inset:9px;border:0.5px solid rgba(246,191,207,.2);pointer-events:none}
+.env-card.rise{transform:translateX(-50%) translateY(-28%);opacity:1}
+.env-card-ey{font-family:'Jost',sans-serif;font-size:.49rem;letter-spacing:.24em;text-transform:uppercase;color:var(--blue-light);margin-bottom:.45rem;font-weight:400}
+.env-card-nm{font-family:'Cormorant Garamond',serif;font-size:clamp(1.3rem,3vw,2rem);font-style:italic;font-weight:300;color:var(--blue-dark);line-height:1.1}
+.env-card-amp{font-size:.85em;color:var(--blue-light)}
+.env-card-amp-line{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:var(--blue-light);margin:.25rem 0;font-weight:300}
+.env-card-dt{font-family:'Jost',sans-serif;font-size:.48rem;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);margin-top:.3rem;font-weight:300}
+.env-card-rl{width:18px;height:.5px;background:var(--petal);opacity:.6;margin:.6rem auto 0}
+
+.env-footer{font-family:'Jost',sans-serif;font-size:.55rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(28,43,74,.90);margin-top:1.6rem;animation:fadeUp .9s .18s ease both}
+
+/* ── MAIN SITE ──
+   Key: visibility:hidden keeps it in the layout/paint tree
+   so opacity transitions work. We never use display:none.
+── */
+#main{
+  position:relative;
+  visibility:hidden;
+  opacity:0;
+  transform:scale(0.05);
+  transform-origin:center 30vh; /* expand from roughly where envelope sits */
+  /* no transition here — we add it via JS after first paint */
+}
+#main.unfurl{
+  visibility:visible;
+  opacity:1;
+  transform:scale(1);
+}
+
+/* NAV — fully clear over hero (no frosted layer on copy). Background swaps instantly — no transition — so it never “eases through” transparent and flash body. */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:1.05rem 2rem;background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none;border-bottom:.5px solid transparent;transform:translateY(-100%);transition:transform .6s ease .4s,border-color .2s ease}
+nav.scrolled{background:rgba(245,243,235,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:.5px solid rgba(122,157,181,.12)}
+.nav-logo{display:flex;flex-direction:column;line-height:.8;text-decoration:none;padding:.05rem 0}
+.nav-mono-l,.nav-mono-amp,.nav-mono-a{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;color:var(--blue-dark)}
+.nav-mono-l{font-size:1.35rem;margin-left:0}
+.nav-mono-amp{font-size:.85rem;margin-left:.5rem}
+.nav-mono-a{font-size:1.35rem;margin-left:1rem}
+nav.show{transform:translateY(0)}
+.nav-links{display:flex;gap:2.4rem;justify-content:center;align-items:center}
+.nav-links a{font-family:'Jost',sans-serif;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;font-weight:400;color:rgba(255,255,255,.9);text-decoration:none;transition:opacity .25s,color .4s ease}
+.nav-links a:hover{opacity:.6}
+nav.scrolled .nav-links a{color:var(--blue)}
+nav.scrolled .nav-mono-l,nav.scrolled .nav-mono-a{color:var(--blue-dark)}nav.scrolled .nav-mono-amp{color:var(--sage-dark)}
+.nav-mono-l,.nav-mono-a{transition:color .4s ease;color:rgba(255,255,255,.92)}.nav-mono-amp{transition:color .4s ease;color:rgba(246,191,207,.9)}
+
+/* FIX: Mobile nav hamburger */
+.nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:.5rem;min-width:44px;min-height:44px;grid-column:3;justify-self:end}
+.nav-hamburger span{display:block;width:20px;height:1.5px;background:rgba(255,255,255,.92);transition:transform .3s ease,opacity .3s ease,background .4s ease}
+nav.scrolled .nav-hamburger span{background:var(--blue-dark)}
+.nav-hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.nav-hamburger.open span:nth-child(2){opacity:0}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+@media(max-width:640px){
+  nav{grid-template-columns:1fr 1fr;padding:.8rem 1.2rem}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:rgba(245,243,235,.98);backdrop-filter:blur(12px);border-bottom:.5px solid rgba(122,157,181,.15);padding:.5rem 0}
+  .nav-links.open{display:flex}
+  .nav-links a{color:var(--blue) !important;font-size:.65rem;padding:.85rem 1.6rem;border-bottom:.5px solid rgba(122,157,181,.08);min-height:44px;display:flex;align-items:center}
+  .nav-links a:last-child{border-bottom:none}
+  .nav-hamburger{display:flex}
+}
+
+/* HERO */
+#hero{position:relative;height:min(92vh,900px);min-height:560px;overflow:hidden}
+.h-img{position:absolute;inset:-5%;background-size:cover;background-position:center 45%;will-change:transform;animation:kenBurns 22s ease-in-out infinite alternate}
+@keyframes kenBurns{0%{transform:scale(1.0) translate(2%,1%)}100%{transform:scale(1.08) translate(-2%,-1%)}}
+.h-ov{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(28,43,74,.15) 0%,rgba(28,43,74,.02) 30%,rgba(28,43,74,.72) 100%)}
+.h-ct{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:6.5rem 2rem 5.5rem;color:#F5F3EB}
+.h-txt-plate{padding:2.8rem 3rem 2.6rem;max-width:36rem;margin:0 auto}
+.h-ey{font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(245,243,235,.78);font-weight:400;margin-bottom:1.25rem;text-shadow:0 1px 6px rgba(0,0,0,.5)}
+.h-nm{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(3.2rem,7.5vw,6rem);color:#fff;line-height:.88;text-shadow:0 2px 8px rgba(0,0,0,.55),0 4px 32px rgba(0,0,0,.38)}
+.h-amp{display:block;font-size:clamp(.85rem,1.55vw,1.02rem);font-family:'Jost',sans-serif;font-style:normal;letter-spacing:.28em;text-transform:uppercase;font-weight:400;color:rgba(245,243,235,.55);margin:.85rem 0 .1rem}
+.h-rl{display:flex;align-items:center;gap:.85rem;margin:1.65rem 0 1.35rem;justify-content:center}
+.h-rl::before,.h-rl::after{content:'';display:block;width:36px;height:.5px;background:rgba(245,243,235,.38)}
+.h-rl-d{width:3px;height:3px;background:var(--petal);transform:rotate(45deg)}
+.h-dt{font-family:'Jost',sans-serif;font-size:.65rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(245,243,235,.82);font-weight:400;text-shadow:0 1px 6px rgba(0,0,0,.5)}
+.h-loc{font-family:'Cormorant Garamond',serif;font-size:1.18rem;font-style:italic;font-weight:300;color:rgba(245,243,235,.75);margin-top:.45rem;text-shadow:0 1px 8px rgba(0,0,0,.45)}
+.cd{display:flex;gap:2rem;justify-content:center;margin-top:2.75rem}
+.cd-b{text-align:center}
+.cd-n{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;line-height:1;color:rgba(245,243,235,.92);text-shadow:0 1px 12px rgba(0,0,0,.22)}
+.cd-l{font-family:'Jost',sans-serif;font-size:.54rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,243,235,.55);margin-top:.22rem;font-weight:400}
+.cd-sep{font-family:'Cormorant Garamond',serif;font-size:1.55rem;color:rgba(245,243,235,.55);align-self:flex-start;padding-top:.45rem}
+.h-scroll{position:absolute;bottom:2.25rem;left:50%;transform:translateX(-50%);font-family:'Jost',sans-serif;font-size:.54rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,243,235,.48);display:flex;flex-direction:column;align-items:center;gap:.55rem;animation:scBob 2.5s ease infinite}
+.h-scroll-ln{width:.5px;height:24px;background:rgba(245,243,235,.28)}
+@keyframes scBob{0%,100%{transform:translateX(-50%) translateY(0);opacity:.38}50%{transform:translateX(-50%) translateY(5px);opacity:.62}}
+
+/* SHARED */
+.si{max-width:860px;margin:0 auto;padding:5.5rem 2rem}
+.stag{font-family:'Jost',sans-serif;font-size:.65rem;letter-spacing:.26em;text-transform:uppercase;color:var(--sage-dark);font-weight:400;margin-bottom:.7rem}
+.stit{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,2.85rem);font-weight:300;color:var(--blue-dark);line-height:1.12;margin-bottom:1.35rem}
+.stit em{font-style:italic;color:var(--blue)}
+.rule{width:34px;height:.5px;background:var(--sage);opacity:.9;margin-bottom:1.5rem}
+.sbody{font-size:.94rem;line-height:1.92;color:var(--text-body);max-width:560px;font-weight:300}
+
+/* EVENTS — TIMELINE (single column, scroll) */
+#det{background:var(--white);overflow:hidden}
+#det .si{max-width:920px}
+.tl{position:relative;margin-top:3.75rem;padding-bottom:2rem;max-width:40rem;margin-left:auto;margin-right:auto}
+.tl-spine{position:absolute;left:22px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,rgba(122,157,181,.25) 6%,rgba(122,157,181,.25) 94%,transparent);transform:translateX(-50%)}
+.tl-spine-fill{position:absolute;left:22px;top:0;width:2px;background:var(--sage);transform:translateX(-50%);transform-origin:top;height:0;border-radius:1px}
+.tl-item{display:grid;grid-template-columns:44px 1fr;gap:1.35rem 1.75rem;align-items:start;margin-bottom:3.25rem;position:relative}
+.tl-item:last-child{margin-bottom:0}
+.tl-node-col{display:flex;flex-direction:column;align-items:center;padding-top:.35rem;position:relative;z-index:1}
+.tl-dot{width:14px;height:14px;border-radius:50%;border:2px solid rgba(122,157,181,.45);background:var(--white);transition:background .45s ease,border-color .45s ease,transform .45s ease,box-shadow .45s ease;flex-shrink:0}
+.tl-dot.lit{background:var(--blue);border-color:var(--blue);box-shadow:0 0 0 5px rgba(122,157,181,.14)}
+.tl-dot.lit.ac{transform:scale(1.15);box-shadow:0 0 0 6px rgba(107,145,112,.22)}
+.tl-date-tag{font-family:'Jost',sans-serif;font-size:.52rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-top:.5rem;text-align:center;line-height:1.25;max-width:3.2rem}
+.tl-card{text-align:left;padding:1.85rem 2rem 2rem;background:rgba(122,157,181,.07);border:.5px solid rgba(122,157,181,.14);opacity:1;transform:translateY(0);transition:opacity .7s ease,transform .7s cubic-bezier(.16,1,.3,1)}
+.tl-card.on{opacity:1;transform:translateY(0)}
+.js-tl .tl-item .tl-card{opacity:0;transform:translateY(28px)}
+.js-tl .tl-item .tl-card.on{opacity:1;transform:translateY(0)}
+.tl-item.tl-ac .tl-card{background:rgba(107,145,112,.09);border-color:rgba(107,145,112,.2)}
+.et{font-family:'Jost',sans-serif;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--sage-dark);margin-bottom:.4rem;font-weight:400}
+.en{font-family:'Cormorant Garamond',serif;font-size:clamp(1.65rem,2.8vw,2.05rem);font-weight:400;color:var(--blue-dark);margin-bottom:.28rem;line-height:1.15}
+.ev2{font-family:'Jost',sans-serif;font-size:.86rem;color:var(--blue);margin-bottom:.65rem;font-weight:300}
+.ed{font-family:'Jost',sans-serif;font-size:.98rem;color:var(--text-body);line-height:1.88;font-weight:300;max-width:none}
+.tl-item.tl-ac .tl-dot{background:var(--sage-dark);border-color:var(--sage-dark)}
+.tl-item.tl-ac .en{font-size:clamp(1.85rem,3.2vw,2.35rem);font-style:italic}
+@media(max-width:600px){
+  .tl{max-width:none;padding-left:.25rem;padding-right:0}
+  .tl-spine,.tl-spine-fill{left:18px}
+  .tl-item{grid-template-columns:36px 1fr;gap:1rem 1.1rem;margin-bottom:2.6rem}
+  .tl-dot{width:12px;height:12px}
+  .tl-card{padding:1.45rem 1.35rem 1.6rem}
+  .tl-date-tag{font-size:.48rem;max-width:2.8rem}
+}
+
+/* TRAVEL */
+#trav{background:var(--blue-dark);overflow:hidden}
+#trav .stag{color:var(--petal);opacity:1}
+#trav .stit{color:var(--blue-pale)}
+#trav .stit em{color:var(--blue-light)}
+#trav .rule{background:var(--petal)}
+.rsvp-left .stag{color:var(--petal)}
+.rsvp-left .rule{background:var(--petal);opacity:.8}
+#venue .stag{color:var(--sage-dark)}
+#trav .sbody{color:rgba(221,232,243,.72)}
+.tg{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-top:2.4rem;perspective:1200px}
+@media(max-width:600px){.tg{grid-template-columns:1fr}}
+.tc{padding:1.7rem 1.5rem;border:.5px solid rgba(184,206,223,.22);background:rgba(255,255,255,.05);transition:transform .4s ease,box-shadow .4s ease,background .4s ease;transform-style:preserve-3d;will-change:transform}
+@media(hover:hover){.tc:hover{transform:perspective(600px) rotateX(3deg) rotateY(-2deg) translateY(-6px);box-shadow:0 20px 48px rgba(0,0,0,.25),0 2px 8px rgba(0,0,0,.12);background:rgba(255,255,255,.09)}}
+.tcl{font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#B8CEDF;margin-bottom:.48rem;font-weight:400}
+.tc h3{font-family:'Cormorant Garamond',serif;font-size:1.32rem;font-weight:400;color:#fff;margin-bottom:.58rem}
+.tc p{font-family:'Jost',sans-serif;font-size:.9rem;line-height:1.88;color:rgba(221,232,243,.82);font-weight:300}
+.tc a{color:var(--parchment);text-underline-offset:3px;text-decoration-color:rgba(245,243,235,.35)}
+.tc strong{color:var(--blue-pale);font-weight:400}
+
+/* GALLERY */
+#gal{background:var(--parchment);overflow:hidden}
+.pm{display:grid;grid-template-columns:1.5fr 1fr;grid-template-rows:290px 230px;gap:5px;margin-top:2.2rem}
+@media(max-width:600px){.pm{grid-template-columns:1fr;grid-template-rows:auto}.pt{grid-row:span 1}.pf{min-height:220px}}
+.pf{overflow:hidden;background:var(--blue-pale)}
+.pt{grid-row:span 2}
+.pf img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s ease}
+.pf:hover img{transform:scale(1.06)}
+.pcap{font-family:'Cormorant Garamond',serif;font-size:.92rem;font-style:italic;font-weight:300;color:var(--sage-dark);text-align:center;padding:1.4rem 0 0}
+
+/* RSVP */
+#rsvp{position:relative;overflow:hidden;background:var(--dark)}
+.rsvp-bg{position:absolute;inset:-15%;z-index:0;background-size:cover;background-position:center 60%;will-change:transform;filter:brightness(.38) saturate(.65);pointer-events:none}
+.rsvp-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(135deg,rgba(28,43,74,.8) 0%,rgba(28,43,74,.55) 100%);pointer-events:none}
+.rsvp-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;max-width:960px;margin:0 auto;padding:6rem 2rem}
+@media(max-width:600px){.rsvp-inner{grid-template-columns:1fr;gap:2.5rem}}
+.rsvp-left{position:relative;z-index:3}.rsvp-left .stag{color:rgba(221,232,243,.48)}
+.rsvp-left .stit{color:#F5F3EB}
+.rsvp-left .stit em{color:rgba(184,206,223,.85)}
+.rsvp-left .rule{background:rgba(184,206,223,.35)}
+.rsvp-left .sbody{color:rgba(221,232,243,.6);max-width:100%}
+.rsvp-dl{font-family:'Jost',sans-serif;font-size:.72rem;letter-spacing:.1em;color:rgba(184,206,223,.88);margin-top:1.35rem;font-weight:300}
+.rsvp-card{position:relative;z-index:3;opacity:1;background:rgba(245,243,235,.97);padding:2.1rem 1.9rem;box-shadow:0 24px 70px rgba(0,0,0,.45)}
+#suggestions{max-height:180px;overflow-y:auto;border:.5px solid rgba(122,157,181,.2);margin-top:.2rem;background:var(--parchment);display:none}
+.suggestion-item{padding:.6rem .9rem;font-family:Jost,sans-serif;font-size:.84rem;color:var(--blue-dark);cursor:pointer;transition:background .15s;font-weight:300}
+.suggestion-item:hover,.suggestion-item.active{background:var(--blue-pale)}
+.suggestion-item mark{background:transparent;color:var(--blue-dark);font-weight:500}
+.rf{display:flex;flex-direction:column;gap:.88rem}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:.88rem}
+@media(max-width:400px){.frow{grid-template-columns:1fr}}
+.fg{display:flex;flex-direction:column;gap:.26rem}
+.fg label{font-family:'Jost',sans-serif;font-size:.63rem;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);font-weight:400}
+.fg input:not([type=radio]),.fg select,.fg textarea{background:var(--parchment);border:.5px solid rgba(122,157,181,.22);padding:.62rem .9rem;font-family:'Jost',sans-serif;font-size:1rem;/* was .84rem — 16px min prevents iOS auto-zoom */color:var(--blue-dark);outline:none;transition:border-color .2s;font-weight:300;border-radius:0;-webkit-appearance:none}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(122,157,181,.35);font-size:.82rem}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--blue)}
+.fg textarea{resize:vertical;min-height:70px}
+.rg{display:flex;gap:1.2rem;flex-wrap:wrap;padding-top:.05rem}
+.rg label{display:flex;align-items:center;gap:.35rem;font-family:'Jost',sans-serif;font-size:.88rem;color:var(--blue-dark);cursor:pointer;font-weight:300}
+.rg input[type=radio]{accent-color:var(--petal)}
+.rsvp-submit{margin-top:.25rem;padding:.82rem 0;min-height:44px;width:100%;background:var(--blue-dark);color:var(--blue-pale);border:none;font-family:'Jost',sans-serif;font-size:.63rem;letter-spacing:.26em;text-transform:uppercase;cursor:pointer;font-weight:400;transition:background .3s}
+.rsvp-submit:hover{background:var(--blue)}
+.ty{display:none;padding:2rem;text-align:center;font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-style:italic;color:var(--blue-dark);font-weight:300;line-height:1.5}
+
+/* POPUP */
+#rsvp-popup{position:fixed;inset:0;z-index:800;display:flex;align-items:center;justify-content:center;background:rgba(28,43,74,.7);backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .5s ease}
+#rsvp-popup.show{opacity:1;pointer-events:all}
+.popup-card{background:var(--parchment);padding:2.8rem 2.4rem;text-align:center;max-width:380px;width:90%;box-shadow:0 30px 80px rgba(0,0,0,.4);transform:translateY(16px);transition:transform .5s ease;position:relative}
+#rsvp-popup.show .popup-card{transform:translateY(0)}
+.popup-close{position:absolute;top:.4rem;right:.5rem;background:none;border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:.7rem;color:rgba(122,157,181,.4);letter-spacing:.1em;transition:color .2s;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center;padding:.5rem}
+.popup-close:hover{color:var(--blue)}
+.popup-tag{font-family:'Jost',sans-serif;font-size:.55rem;letter-spacing:.28em;text-transform:uppercase;color:var(--sage-dark);font-weight:400;margin-bottom:.7rem}
+.popup-title{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-style:italic;font-weight:300;color:var(--blue-dark);line-height:1.1;margin-bottom:.6rem}
+.popup-rule{width:28px;height:.5px;background:var(--sage);opacity:.5;margin:.8rem auto 1.4rem}
+.popup-sub{font-family:'Jost',sans-serif;font-size:.9rem;color:var(--text-body);line-height:1.78;font-weight:300;margin-bottom:1.8rem}
+.popup-btns{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+.popup-btn-yes{padding:.7rem 2rem;background:var(--blue-dark);color:var(--blue-pale);border:none;font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;cursor:pointer;font-weight:400;transition:background .25s}
+.popup-btn-yes:hover{background:var(--blue)}
+.popup-btn-no{padding:.7rem 1.6rem;background:transparent;color:var(--blue);border:.5px solid rgba(122,157,181,.28);font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;cursor:pointer;font-weight:400;transition:border-color .25s,color .25s}
+.popup-btn-no:hover{border-color:var(--blue);color:var(--blue-dark)}
+
+/* FOOTER */
+footer{background:var(--blue-dark);text-align:center;padding:3rem 2rem}
+.fn{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:300;font-style:italic;color:var(--blue-pale)}
+.fd{font-family:'Jost',sans-serif;font-size:.65rem;letter-spacing:.24em;text-transform:uppercase;color:var(--blue-light);margin-top:.65rem;font-weight:300;opacity:.62}
+.frl{width:26px;height:.5px;background:var(--petal);opacity:.7;margin:1.4rem auto 1.1rem}
+.fnt{font-family:'Jost',sans-serif;font-size:.65rem;color:rgba(221,232,243,.16);font-weight:300}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(20px);transition:opacity .75s ease,transform .75s ease}
+.rv.on{opacity:1;transform:none}
+.rv-l{opacity:0;transform:translateX(-18px);transition:opacity .75s ease,transform .75s ease}
+.rv-l.on{opacity:1;transform:none}
+.rv-r{opacity:0;transform:translateX(18px);transition:opacity .75s ease,transform .75s ease}
+.rv-r.on{opacity:1;transform:none}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .env-header,.env-stage,.env-footer{animation:none!important}
+  .h-img{animation:none!important}
+  .h-scroll{animation:none!important}
+  .envelope,.env-card,#envFlapGroup,.wax-seal,#env-screen,.popup-card{transition-duration:.01ms!important}
+  .rv,.rv-l,.rv-r{transition-duration:.01ms!important}
+  .tc{transition-duration:.01ms!important}
+}
+
+.h-cal{display:flex;flex-wrap:wrap;gap:.65rem 1.15rem;justify-content:center;margin-top:2.25rem;max-width:28rem;margin-left:auto;margin-right:auto}
+.h-cal a{font-family:'Jost',sans-serif;font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;font-weight:400;color:rgba(245,243,235,.78);text-decoration:none;border-bottom:.5px solid rgba(245,243,235,.3);padding-bottom:.14rem;transition:color .25s,border-color .25s,opacity .25s}
+.h-cal a:hover{color:#fff;border-bottom-color:rgba(245,243,235,.55)}
+.hp-field{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+
+/* ── MOBILE BODY TEXT ── */
+@media(max-width:640px){
+  .sbody{font-size:1rem;line-height:1.88}
+  .ed{font-size:.94rem}
+  .tc p{font-size:.94rem}
+  .rg label{font-size:.9rem}
+  .popup-sub{font-size:.94rem}
+  .fg input::placeholder,.fg textarea::placeholder{font-size:.9rem}
+  #hero{min-height:500px;height:min(88vh,820px)}
+  .h-ct{padding:5.25rem 1.5rem 4.5rem}
+  .h-txt-plate{padding:2.2rem 1.25rem 2rem}
+}
+
+/* ── TABLET BREAKPOINT ── */
+@media(max-width:768px){
+  .tg{grid-template-columns:1fr}
+  .rsvp-inner{grid-template-columns:1fr;gap:2.5rem;padding:4rem 2rem}
+  .si{padding:4rem 2rem}
+}
+
+
+/* ── VENUE SECTION ── */
+#venue{
+  position:relative;
+  background:var(--dark);
+  overflow:hidden;
+}
+
+
+/* ── STICKY STAGE ── */
+.venue-stage{
+  position:sticky;top:0;height:100vh;width:100%;
+  z-index:2;pointer-events:none;overflow:hidden;
+}
+
+/* LAYER 1: SKY — fills viewport, drifts slowly up */
+.venue-sky{
+  position:absolute;inset:0;
+  will-change:transform;
+}
+.venue-sky img{
+  width:100%;height:100%;
+  object-fit:cover;object-position:center 35%;
+  -webkit-mask-image:
+    linear-gradient(to bottom,
+      rgba(0,0,0,1) 0%,rgba(0,0,0,1) 65%,
+      rgba(0,0,0,.3) 82%,rgba(0,0,0,0) 100%),
+    linear-gradient(to right,
+      rgba(0,0,0,0) 0%,rgba(0,0,0,.8) 6%,rgba(0,0,0,1) 14%,
+      rgba(0,0,0,1) 86%,rgba(0,0,0,.8) 94%,rgba(0,0,0,0) 100%);
+  -webkit-mask-composite:source-in;
+  mask-image:
+    linear-gradient(to bottom,
+      rgba(0,0,0,1) 0%,rgba(0,0,0,1) 65%,
+      rgba(0,0,0,.3) 82%,rgba(0,0,0,0) 100%),
+    linear-gradient(to right,
+      rgba(0,0,0,0) 0%,rgba(0,0,0,.8) 6%,rgba(0,0,0,1) 14%,
+      rgba(0,0,0,1) 86%,rgba(0,0,0,.8) 94%,rgba(0,0,0,0) 100%);
+  mask-composite:intersect;
+}
+
+/* LAYER 2: CASTLE PNG — true transparency, rises from below */
+.venue-castle{
+  position:absolute;
+  bottom:-4.6vh;
+  left:50%;
+  transform:translateX(-50%) translateY(72%);
+  will-change:transform;
+  width:min(96vh, 88vw);
+  max-width:860px;
+  /* only fade the very base into the ground and soft left/right edges —
+     no transparency manipulation, let the PNG do its job */
+
+}
+
+/* ground fog — dissolves the base into parchment */
+.venue-fog{
+  position:absolute;bottom:0;left:0;right:0;height:35%;
+  background:linear-gradient(to top,
+    rgba(245,243,235,1) 0%,rgba(245,243,235,1) 25%,
+    rgba(245,243,235,.7) 50%,rgba(245,243,235,.2) 75%,
+    transparent 100%);
+  z-index:4;pointer-events:none;
+}
+/* side fades */
+.venue-sides{
+  position:absolute;inset:0;
+  background:linear-gradient(to right,
+    var(--parchment) 0%,transparent 9%,
+    transparent 91%,var(--parchment) 100%);
+  z-index:4;pointer-events:none;
+}
+
+/* floating title in the sky */
+.venue-sky-title{
+  position:absolute;
+  top:22%;left:0;right:0;
+  text-align:center;
+  z-index:5;
+  padding:0 2rem;
+  pointer-events:none;
+}
+.venue-sky-title .venue-eyebrow{
+  font-family:'Jost',sans-serif;font-size:.53rem;letter-spacing:.34em;
+  text-transform:uppercase;font-weight:400;
+  color:rgba(28,43,74,.7);display:block;margin-bottom:1rem;
+  text-shadow:0 1px 8px rgba(245,243,235,.9);
+  opacity:0;transform:translateY(14px);transition:opacity .8s ease,transform .8s ease;
+}
+.venue-sky-title .venue-eyebrow.vis{opacity:1;transform:translateY(0)}
+.venue-sky-title .venue-title{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;
+  font-size:clamp(2.6rem,5.5vw,4.2rem);color:var(--blue-dark);line-height:.9;
+  text-shadow:0 2px 24px rgba(245,243,235,.95),0 1px 6px rgba(245,243,235,.8);
+  opacity:0;transform:translateY(16px);transition:opacity .9s .1s ease,transform .9s .1s ease;
+}
+.venue-sky-title .venue-title.vis{opacity:1;transform:translateY(0)}
+.venue-sky-title .venue-title-sub{
+  display:block;font-size:.46em;font-family:'Jost',sans-serif;font-style:normal;
+  letter-spacing:.24em;text-transform:uppercase;font-weight:400;margin-top:.85rem;
+  color:rgba(122,157,181,.75);
+  text-shadow:0 1px 8px rgba(245,243,235,.9);
+  opacity:0;transform:translateY(12px);transition:opacity .8s .2s ease,transform .8s .2s ease;
+}
+.venue-sky-title .venue-title-sub.vis{opacity:1;transform:translateY(0)}
+.venue-sky-title .venue-rule{
+  display:flex;align-items:center;gap:.8rem;justify-content:center;
+  margin:1.8rem auto 0;
+  opacity:0;transition:opacity .8s .32s ease;
+}
+.venue-sky-title .venue-rule.vis{opacity:1}
+.venue-sky-title .venue-rule::before,
+.venue-sky-title .venue-rule::after{content:'';display:block;width:40px;height:.5px;background:rgba(122,157,181,.25)}
+.venue-rule-diamond{width:4px;height:4px;background:var(--petal);transform:rotate(45deg)}
+
+/* ── SCROLL CONTENT ── */
+.venue-content{
+  position:relative;z-index:10;
+  margin-top:-8vh;
+  background:var(--parchment);
+}
+.venue-content::before{
+  content:'';display:block;height:28px;
+  background:linear-gradient(to bottom,transparent,var(--parchment));
+  pointer-events:none;
+}
+.venue-inner{max-width:960px;margin:0 auto;padding:0 2.4rem 2rem}
+
+.venue-properties{display:grid;grid-template-columns:1fr 1fr;gap:3rem 4.5rem;padding-top:.5rem}
+.venue-property{opacity:0;transform:translateY(22px);transition:opacity .9s ease,transform .9s cubic-bezier(.16,1,.3,1)}
+.venue-property.vis{opacity:1;transform:translateY(0)}
+.venue-property:nth-child(2){transition-delay:.15s}
+.venue-prop-eyebrow{font-family:'Jost',sans-serif;font-size:.52rem;letter-spacing:.28em;text-transform:uppercase;color:var(--sage-dark);font-weight:400;display:block;margin-bottom:.55rem}
+.venue-prop-name{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:1.9rem;color:var(--blue-dark);line-height:.95;margin-bottom:.9rem}
+.venue-prop-desc{font-family:'Jost',sans-serif;font-weight:300;font-size:.9rem;line-height:1.88;color:var(--text-body)}
+.venue-prop-rule{width:24px;height:.5px;background:rgba(122,157,181,.2);margin:1.4rem 0 0}
+
+.venue-links{display:flex;gap:1.4rem;flex-wrap:wrap;margin-top:3rem;padding-top:2rem;border-top:.5px solid rgba(122,157,181,.1);opacity:0;transform:translateY(14px);transition:opacity .8s .3s ease,transform .8s .3s ease}
+.venue-links.vis{opacity:1;transform:translateY(0)}
+.venue-link{font-family:'Jost',sans-serif;font-size:.55rem;letter-spacing:.24em;text-transform:uppercase;font-weight:400;color:var(--blue-dark);text-decoration:none;border-bottom:.5px solid rgba(28,43,74,.28);padding-bottom:.15rem;transition:border-color .2s,color .2s}
+.venue-link:hover{color:var(--blue);border-color:var(--blue)}
+.venue-link-muted{color:var(--blue-light);border-color:rgba(184,206,223,.2)}
+.venue-coords{font-family:'Jost',sans-serif;font-size:.5rem;letter-spacing:.18em;color:rgba(122,157,181,.38);font-weight:300;margin-top:1.4rem;padding-bottom:0}
+
+@media(max-width:680px){
+  .venue-properties{grid-template-columns:1fr;gap:2.4rem}
+  #venue{}
+  .venue-content{margin-top:-10vh}
+  .venue-castle{width:150vw;max-width:none}
+  .venue-sky-title{top:16%}
+}
+</style>
+
+
+
+</head>
+<body>
+<div id="env-screen">
+  <div style="position:absolute;inset:0;background-image:url('36e0e5b7c600ac4a.jpg');background-size:cover;background-position:center 35%;opacity:.15;pointer-events:none;z-index:0"></div>
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 90% 80% at 50% 50%,transparent 30%,rgba(221,232,243,.55) 100%);pointer-events:none;z-index:0"></div>
+  <div class="env-stage" style="position:relative;z-index:1">
+
+    <!-- Visual envelope (flips on password submit) -->
+    <div class="envelope">
+
+      <!-- BACK: flap side with wax seal (hidden on load, revealed after flip) -->
+      <div class="env-back">
+        <div class="env-svg-wrap">
+          <svg viewBox="0 0 460 300" xmlns="http://www.w3.org/2000/svg" style="overflow:visible">
+        <rect x="0" y="0" width="460" height="300" fill="#F5F3EB"/>
+        <polygon points="0,300 460,300 230,152" fill="#e8e1d6"/>
+        <polygon points="0,0 0,300 230,152" fill="#e0d8cc" opacity=".65"/>
+        <polygon points="460,0 460,300 230,152" fill="#e0d8cc" opacity=".65"/>
+        <line x1="0" y1="0" x2="230" y2="152" stroke="rgba(122,157,181,.09)" stroke-width=".6"/>
+        <line x1="460" y1="0" x2="230" y2="152" stroke="rgba(122,157,181,.09)" stroke-width=".6"/>
+        <line x1="0" y1="300" x2="230" y2="152" stroke="rgba(122,157,181,.09)" stroke-width=".6"/>
+        <line x1="460" y1="300" x2="230" y2="152" stroke="rgba(122,157,181,.09)" stroke-width=".6"/>
+        <rect x="0" y="0" width="460" height="300" fill="none" stroke="rgba(122,157,181,.12)" stroke-width=".8"/>
+        <g id="envFlapGroup">
+          <polygon points="0,0 460,0 230,148" fill="#ddd5c6"/>
+          <line x1="0" y1="0" x2="230" y2="148" stroke="rgba(122,157,181,.08)" stroke-width=".5"/>
+          <line x1="460" y1="0" x2="230" y2="148" stroke="rgba(122,157,181,.08)" stroke-width=".5"/>
+          <line x1="0" y1="0" x2="460" y2="0" stroke="rgba(122,157,181,.12)" stroke-width=".8"/>
+        </g>
+      </svg>
+        </div>
+        <div class="wax-seal" id="waxSeal">
+      <svg width="66" height="66" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="33" cy="33" rx="31" ry="30" fill="#3a4e6a"/>
+        <ellipse cx="13" cy="21" rx="5" ry="3.5" fill="#3a4e6a" transform="rotate(-35 13 21)"/>
+        <ellipse cx="53" cy="17" rx="4" ry="5" fill="#3a4e6a" transform="rotate(22 53 17)"/>
+        <ellipse cx="57" cy="45" rx="3.5" ry="4" fill="#3a4e6a" transform="rotate(50 57 45)"/>
+        <ellipse cx="9" cy="47" rx="3" ry="4" fill="#3a4e6a" transform="rotate(-22 9 47)"/>
+        <ellipse cx="33" cy="61" rx="5" ry="3" fill="#3a4e6a"/>
+        <ellipse cx="20" cy="56" rx="3" ry="2.5" fill="#3a4e6a" transform="rotate(-15 20 56)"/>
+        <ellipse cx="46" cy="57" rx="3" ry="2.5" fill="#3a4e6a" transform="rotate(15 46 57)"/>
+        <circle cx="33" cy="33" r="27" fill="#1C2B4A"/>
+        <circle cx="33" cy="33" r="25.5" fill="none" stroke="rgba(221,232,243,.28)" stroke-width=".7"/>
+        <circle cx="33" cy="33" r="20.5" fill="none" stroke="rgba(221,232,243,.18)" stroke-width=".5"/>
+        <circle cx="33" cy="8.5" r="1.1" fill="rgba(221,232,243,.32)"/>
+        <circle cx="33" cy="57.5" r="1.1" fill="rgba(221,232,243,.32)"/>
+        <circle cx="8.5" cy="33" r="1.1" fill="rgba(221,232,243,.32)"/>
+        <circle cx="57.5" cy="33" r="1.1" fill="rgba(221,232,243,.32)"/>
+        <text x="33" y="39" text-anchor="middle" font-family="Cormorant Garamond,Georgia,serif" font-style="italic" font-weight="300" font-size="15" fill="rgba(221,232,243,.9)" letter-spacing="2.5">L&amp;A</text>
+        <ellipse cx="25" cy="23" rx="7" ry="4" fill="rgba(255,255,255,.07)" transform="rotate(-38 25 23)"/>
+      </svg>
+    </div>
+      </div>
+
+      <!-- FRONT: address side (visible on load) -->
+      <div class="env-front">
+        <svg viewBox="0 0 460 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;filter:drop-shadow(0 40px 80px rgba(28,43,74,.25))">
+          <rect x="0" y="0" width="460" height="300" fill="#F5F3EB"/>
+          <text x="230" y="105" text-anchor="middle" font-family="Jost,sans-serif" font-size="8" font-weight="400" fill="rgba(28,43,74,.45)" letter-spacing="3">THE WEDDING OF</text>
+          <text x="230" y="145" text-anchor="middle" font-family="Cormorant Garamond,Georgia,serif" font-style="italic" font-weight="300" font-size="26" fill="#1C2B4A">Laura Cottrell</text>
+          <text x="230" y="165" text-anchor="middle" font-family="Cormorant Garamond,Georgia,serif" font-style="italic" font-weight="300" font-size="15" fill="rgba(122,157,181,.5)">&amp;</text>
+          <text x="230" y="193" text-anchor="middle" font-family="Cormorant Garamond,Georgia,serif" font-style="italic" font-weight="300" font-size="26" fill="#1C2B4A">Andrew Donnelly</text>
+          <text x="230" y="218" text-anchor="middle" font-family="Jost,sans-serif" font-size="6.5" font-weight="300" fill="rgba(28,43,74,.38)" letter-spacing="2.5">JULY 2, 2027 · ASHFORD CASTLE · IRELAND</text>
+
+          <!-- Irish stamp — top right (~85% size, right edge aligned) -->
+          <image href="a4613c1987f05303.jpg" x="373" y="12" width="65" height="77"/>
+        </svg>
+      </div>
+
+    </div><!-- /envelope -->
+
+    <!-- Password input and invitation card — outside the flipping element -->
+    <div class="env-pw" id="envPw">
+      <div class="env-pw-label" id="pw-label">Enter password to open</div>
+      <input class="env-pw-input" id="pwIn" type="text" aria-labelledby="pw-label" placeholder="password" autocomplete="off" spellcheck="false">
+      <button class="env-pw-btn" onclick="checkPw()">Open</button>
+      <div class="env-pw-error" id="pwErr">&nbsp;</div>
+    </div>
+    <div class="env-card" id="envCard">
+      <div class="env-card-ey">Together with their families</div>
+      <div class="env-card-ey" style="margin-bottom:.9rem">you are joyfully invited to celebrate the marriage of</div>
+      <div class="env-card-nm">Laura Cottrell</div>
+      <div class="env-card-amp-line">&amp;</div>
+      <div class="env-card-nm" style="margin-bottom:.9rem">Andrew Donnelly</div>
+      <div class="env-card-rl"></div>
+      <div class="env-card-dt" style="margin-top:.7rem">Friday, the Second of July</div>
+      <div class="env-card-dt">Two Thousand and Twenty-Seven</div>
+      <div class="env-card-dt" style="margin-top:.5rem">at Three o&rsquo;Clock in the Afternoon</div>
+      <div class="env-card-rl" style="margin-top:.7rem"></div>
+      <div class="env-card-dt" style="margin-top:.7rem">The Lodge at Ashford Castle</div>
+      <div class="env-card-dt">Cong, County Mayo, Ireland</div>
+    </div>
+
+  </div><!-- /env-stage -->
+  <p class="env-footer">July 2, 2027 &middot; Ashford Castle &middot; County Mayo, Ireland</p>
+</div>
+<div id="rsvp-popup">
+  <div class="popup-card">
+    <button class="popup-close" onclick="dismissPopup()">&#x2715; close</button>
+    <p class="popup-tag">Welcome</p>
+    <h2 class="popup-title">Here to RSVP?</h2>
+    <div class="popup-rule"></div>
+    <p class="popup-sub">If you're here to let us know if you can make it, we'll take you straight there.</p>
+    <div class="popup-btns">
+      <button class="popup-btn-yes" onclick="goRsvp()">Yes, RSVP now</button>
+      <button class="popup-btn-no" onclick="dismissPopup()">Browse first</button>
+    </div>
+  </div>
+</div>
+<nav id="nav">
+    <a href="#hero" class="nav-logo" aria-label="Home">
+      <span class="nav-mono-l">L</span>
+      <span class="nav-mono-amp">&amp;</span>
+      <span class="nav-mono-a">A</span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#hero" onclick="closeNav()">Home</a>
+      <a href="#det" onclick="closeNav()">Events</a>
+      <a href="#trav" onclick="closeNav()">Travel</a>
+      <a href="#gal" onclick="closeNav()">Photos</a>
+      <a href="#rsvp" onclick="closeNav()">RSVP</a>
+    </div>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+<div id="main">
+  <section id="hero" aria-label="Hero — Laura and Andrew, July 2 2027, Ashford Castle, Ireland">
+    <div class="h-img" style="background-image:url('photo-1.jpg')"></div>
+    <div class="h-ov"></div>
+    <div class="h-ct">
+      <div class="h-txt-plate">
+        <div class="h-nm">Laura<span class="h-amp">&amp;</span>Andrew</div>
+        <div class="h-rl"><div class="h-rl-d"></div></div>
+        <p class="h-dt">Friday &middot; The Second of July &middot; Two Thousand &amp; Twenty-Seven</p>
+        <p class="h-loc">The Lodge at Ashford Castle &middot; County Mayo, Ireland</p>
+        <div class="cd" id="cd">
+          <div class="cd-b"><div class="cd-n" id="cd-d">—</div><div class="cd-l">Days</div></div>
+          <div class="cd-sep">·</div>
+          <div class="cd-b"><div class="cd-n" id="cd-h">—</div><div class="cd-l">Hours</div></div>
+          <div class="cd-sep">·</div>
+          <div class="cd-b"><div class="cd-n" id="cd-m">—</div><div class="cd-l">Minutes</div></div>
+          <div class="cd-sep">·</div>
+          <div class="cd-b"><div class="cd-n" id="cd-s">—</div><div class="cd-l">Seconds</div></div>
+        </div>
+        <div class="h-cal" role="group" aria-label="Save the date">
+          <a href="wedding.ics" download="Laura-and-Andrew-July-2-2027.ics">Add to calendar (.ics)</a>
+          <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Laura%20%26%20Andrew%20%E2%80%94%20Wedding&amp;dates=20270702T140000Z/20270702T170000Z&amp;details=Ceremony%20at%20The%20Lodge%20at%20Ashford%20Castle.%20Please%20be%20seated%20by%202%3A45%20pm.&amp;location=The%20Lodge%20at%20Ashford%20Castle%2C%20Cong%2C%20County%20Mayo%2C%20Ireland" target="_blank" rel="noopener">Google Calendar</a>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=The%20Lodge%20at%20Ashford%20Castle%2C%20Cong%2C%20County%20Mayo%2C%20Ireland" target="_blank" rel="noopener">Open map</a>
+        </div>
+      </div>
+    </div>
+    <div class="h-scroll"><div class="h-scroll-ln"></div>Scroll</div>
+  </section>
+
+  <section id="venue">
+  <div class="venue-stage" id="venueStage">
+
+    <!-- Layer 1: painted sky background -->
+    <div class="venue-sky" id="venueSky">
+      <img src="ashford-sky.jpg" alt=""/>
+    </div>
+
+    <!-- Layer 2: castle PNG — real transparency, no manipulation -->
+    <img id="venueCastle" class="venue-castle" src="ashford-castle.png" alt="Ashford Castle"/>
+
+    <div class="venue-fog"></div>
+    <div class="venue-sides"></div>
+
+    <!-- Title floating in the sky -->
+    <div class="venue-sky-title">
+      <span class="venue-eyebrow venue-anim">The Venue</span>
+      <h2 class="venue-title venue-anim">The Lodge at Ashford Castle
+        <span class="venue-title-sub">Cong, County Mayo · Ireland</span>
+      </h2>
+      <div class="venue-rule venue-anim"><div class="venue-rule-diamond"></div></div>
+    </div>
+
+  </div>
+
+  <div class="venue-content">
+    <div class="venue-inner">
+      <div class="venue-properties">
+        <div class="venue-property venue-anim">
+          <span class="venue-prop-eyebrow">The ceremony & celebration</span>
+          <h3 class="venue-prop-name">The Lodge at Ashford Castle</h3>
+          <p class="venue-prop-desc">Set within the ancient estate on the shores of Lough Corrib, The Lodge is where we'll gather to get married. Intimate and unhurried, it sits at the edge of the woodland with views across the river and grounds — the right place for something as personal as this.</p>
+          <div class="venue-prop-rule"></div>
+        </div>
+        <div class="venue-property venue-anim">
+          <span class="venue-prop-eyebrow">The estate</span>
+          <h3 class="venue-prop-name">Ashford Castle</h3>
+          <p class="venue-prop-desc">The Lodge and the Castle share the same grounds — guests are free to roam between the two. Stone corridors, candlelit dining rooms, and a mile of private lakeshore are all yours to enjoy across the weekend. A number of rooms within the Castle have been reserved; booking details will follow with your invitation.</p>
+          <div class="venue-prop-rule"></div>
+        </div>
+      </div>
+      <div class="venue-links venue-anim">
+        <a class="venue-link" href="https://www.thelodgeashford.com" target="_blank" rel="noopener">The Lodge ↗</a>
+        <a class="venue-link venue-link-muted" href="https://www.ashfordcastle.com" target="_blank" rel="noopener">Ashford Castle ↗</a>
+      </div>
+      <p class="venue-coords">53°32′N 9°17′W · County Mayo, Ireland</p>
+    </div>
+  </div>
+</section>
+
+  <div id="det"><div class="si">
+    <p class="stag rv">The Celebrations</p>
+    <h2 class="stit rv">A Weekend of <em>Joy</em></h2>
+    <div class="rule rv"></div>
+    <p class="sbody rv">We are so delighted to welcome you to the west coast of Ireland for our wedding weekend. Below you will find everything you need to know about the events we have planned.</p>
+    <div class="tl" id="tl">
+      <div class="tl-spine"></div>
+      <div class="tl-spine-fill" id="tlFill"></div>
+
+      <div class="tl-item" data-tl>
+        <div class="tl-node-col">
+          <div class="tl-dot" data-dot></div>
+          <div class="tl-date-tag">Jul 1</div>
+        </div>
+        <div class="tl-card">
+          <div class="et">Thursday, July 1</div>
+          <div class="en">Welcome Drinks</div>
+          <div class="ev2">The Lodge at Ashford Castle &middot; 7:30 pm</div>
+          <div class="ed">Join us for a casual evening of drinks as we gather the night before the wedding. Dress code: dressy casual.</div>
+        </div>
+      </div>
+
+      <div class="tl-item tl-ac" data-tl>
+        <div class="tl-node-col">
+          <div class="tl-dot ac" data-dot></div>
+          <div class="tl-date-tag">Jul 2</div>
+        </div>
+        <div class="tl-card">
+          <div class="et">Friday, July 2 &middot; 3:00 pm</div>
+          <div class="en">The Ceremony</div>
+          <div class="ev2">The Lodge at Ashford Castle — Chapel</div>
+          <div class="ed">Please be seated by 2:45 pm. Following the ceremony, guests are invited to join us for champagne and canapés on the castle grounds.</div>
+        </div>
+      </div>
+
+      <div class="tl-item" data-tl>
+        <div class="tl-node-col">
+          <div class="tl-dot" data-dot></div>
+          <div class="tl-date-tag">Jul 2</div>
+        </div>
+        <div class="tl-card">
+          <div class="et">Friday, July 2 &middot; 6:30 pm</div>
+          <div class="en">Reception</div>
+          <div class="ev2">George V Dining Room</div>
+          <div class="ed">A seated dinner followed by dancing. Black tie optional — we love a glamorous moment, but above all we want you to feel wonderful.</div>
+        </div>
+      </div>
+
+      <div class="tl-item" data-tl>
+        <div class="tl-node-col">
+          <div class="tl-dot" data-dot></div>
+          <div class="tl-date-tag">Jul 3</div>
+        </div>
+        <div class="tl-card">
+          <div class="et">Saturday, July 3 &middot; 5:00 pm</div>
+          <div class="en">Day Two</div>
+          <div class="ev2">The Lodge at Ashford Castle</div>
+          <div class="ed">Join the Cottrell family for a relaxed evening to close out the wedding weekend before you head off to explore the wild beauty of <a href="https://www.mayo.ie/visit" target="_blank" rel="noopener" style="color:var(--blue);text-decoration:underline;text-decoration-color:rgba(122,157,181,.3)">County Mayo</a>. Dress code: casual.</div>
+        </div>
+      </div>
+
+    </div>
+  </div></div>
+
+  <div id="trav"><div class="si">
+    <p class="stag rv">Getting There</p>
+    <h2 class="stit rv">Travel &amp; <em>Accommodations</em></h2>
+    <div class="rule rv"></div>
+    <p class="sbody rv">Ashford Castle sits on the shores of Lough Corrib in the heart of County Mayo — one of Ireland's most breathtaking corners. We have gathered everything you need to make your journey as smooth as possible.</p>
+    <div class="tg">
+      <div class="tc rv-l"><div class="tcl">Getting Here</div><h3>Flying In</h3><p>The nearest airport is <strong>Ireland West Airport Knock</strong> (NOC), approximately 45 minutes from Ashford Castle. <strong>Dublin Airport</strong> (DUB) is roughly 2.5 hours by car. We recommend hiring a driver or renting a car to enjoy the beautiful countryside drive.</p></div>
+      <div class="tc rv-r"><div class="tcl">Where to Stay</div><h3>Staying at Ashford Castle</h3><p>We have reserved a room block at <a href="https://www.thelodgeac.com" target="_blank" rel="noopener" style="color:var(--parchment);text-decoration:underline;text-decoration-color:rgba(245,243,235,.35)">The Lodge at Ashford Castle</a>. Please mention "Laura &amp; Andrew Wedding" when calling <a href="tel:+35394954003">+353 94 954 0003</a> or emailing <a href="mailto:reservations@ashfordcastle.com">reservations@ashfordcastle.com</a>. Block rates available until <strong>May 1, 2027</strong>.</p></div>
+      <div class="tc rv-l"><div class="tcl">Nearby Options</div><h3>Local Accommodations</h3><p>For those seeking alternatives nearby, we recommend <strong>Cong Village</strong> (a short walk from the castle), <strong>Ballinrobe</strong>, or <strong>Castlebar</strong>. A shuttle service will run between the castle and Cong village throughout the weekend.</p></div>
+      <div class="tc rv-r"><div class="tcl">While You're There</div><h3>Exploring County Mayo</h3><p>We encourage you to arrive a day early or linger an extra night. From the Connemara mountains to the wild Atlantic coastline, the west of Ireland offers extraordinary beauty at every turn. <a href="https://www.mayo.ie/visit" target="_blank" rel="noopener" style="color:var(--parchment);text-decoration:underline;text-decoration-color:rgba(245,243,235,.35)">Explore County Mayo →</a></p></div>
+    </div>
+  </div></div>
+  <div id="gal"><div class="si" style="padding-bottom:1.5rem">
+    <p class="stag rv">A Few of Our Favourite Moments</p>
+    <h2 class="stit rv"><em>Laura &amp; Andrew</em></h2>
+    <div class="rule rv"></div>
+    <div class="pm rv">
+      <div class="pf pt"><img loading="lazy" style="object-position:80% center" src="photo-1.jpg" alt="Laura and Andrew walking toward the sunset"></div>
+      <div class="pf rv-r" style="transition-delay:.1s"><img loading="lazy" src="rsvp-bg.jpg" alt="Laura and Andrew on a bench at sunset"></div>
+      <div class="pf rv-r" style="transition-delay:.22s"><img loading="lazy" src="photo-3.jpg" alt="Laura and Andrew smiling at the beach"></div>
+    </div>
+  </div></div>
+
+  <div id="rsvp">
+    <div class="rsvp-bg" id="rsvpBg" style="background-image:url('rsvp-bg.jpg')"></div>
+    <div class="rsvp-overlay"></div>
+    <div class="rsvp-inner">
+      <div class="rsvp-left">
+        <p class="stag">RSVP</p>
+        <h2 class="stit">Kindly <em>Reply</em></h2>
+        <div class="rule"></div>
+        <p class="sbody">We would love to know if you are able to join us in Ireland. Please respond by <strong style="color:rgba(221,232,243,.85)">April 1, 2027</strong> so we have time to plan accordingly.</p>
+        <p class="sbody" style="margin-top:.9rem">We cannot wait to celebrate with you on the shores of Lough Corrib.</p>
+        <p class="rsvp-dl">Kindly reply by April 1, 2027</p>
+      </div>
+      <div class="rsvp-card">
+        <div id="ty" class="ty" style="display:none">Thank you —<br>we cannot wait to celebrate with you.</div>
+        <div id="rsvp-greeting" style="display:none;font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:var(--blue-dark);margin-bottom:.5rem;text-align:center;line-height:1.4"></div>
+        <div id="rsvp-party-list" style="display:none;text-align:center;margin-bottom:1rem;padding:.6rem .8rem;background:rgba(122,157,181,.08);border:.5px solid rgba(122,157,181,.18)"></div>
+        <form class="rf" id="rf" onsubmit="doRsvp(event)">
+          <div class="hp-field" aria-hidden="true">
+            <label for="rsvpCompany">Company</label>
+            <input type="text" id="rsvpCompany" name="company" tabindex="-1" autocomplete="off">
+          </div>
+          <div class="fg">
+            <label for="nameField">Your Name</label>
+            <input type="text" id="nameField" placeholder="Start typing your name..." autocomplete="off"
+              oninput="searchGuests(this.value)" onkeydown="searchKeydown(event)">
+            <div id="suggestions"></div>
+            <div id="lookup-err" role="alert" style="font-family:Jost,sans-serif;font-size:.65rem;color:rgba(180,100,100,.75);min-height:.85rem;margin-top:.3rem;letter-spacing:.06em">&nbsp;</div>
+          </div>
+          <div class="fg"><label for="emailField">Email Address</label><input type="email" id="emailField" placeholder="your@email.com"></div>
+          <div class="fg"><label id="att-label">Attendance</label>
+            <div class="rg" role="radiogroup" aria-labelledby="att-label">
+              <label><input type="radio" name="att" value="yes"> Joyfully accepts</label>
+              <label><input type="radio" name="att" value="no"> Regretfully declines</label>
+            </div>
+          </div>
+          <div class="frow">
+            <div class="fg"><label for="guestCount">Guests</label>
+              <select id="guestCount"><option selected>1</option><option>2</option><option>3</option><option>4</option></select>
+            </div>
+            <div class="fg"><label for="eventsSelect">Events</label>
+              <select id="eventsSelect"><option>All events</option><option>Ceremony &amp; Dinner</option><option>Ceremony only</option></select>
+            </div>
+          </div>
+          <div class="fg"><label for="dietaryField">Dietary Requirements</label><input type="text" id="dietaryField" placeholder="Any allergies or needs?"></div>
+          <div class="fg"><label for="noteField">A Note for the Couple</label><textarea id="noteField" placeholder="A kind word or song request..."></textarea></div>
+          <button type="submit" class="rsvp-submit">Send RSVP</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="fn">Laura &amp; Andrew</div>
+    <div class="fd">Friday, July 2, 2027 &middot; Ashford Castle &middot; County Mayo, Ireland</div>
+    <div class="frl"></div>
+    <div class="fnt">Made with love</div>
+  </footer>
+</div>
+<script>
+function prefersReducedMotion() {
+  return typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
+var GUEST_LIST = ["Aine Boyle", "Alan Dennehy", "Ali Youssef", "Aliza Ottenheimer", "Allie Nichols", "Amy [Joy-] Cottrell", "Andrew Donnelly", "Angie Craig", "Ann Ross", "Anne Dennehy", "April Guilotti", "Bailey Braga", "Ben Rhind", "Benjamin Brady", "Bernadette Dean", "Bernie Walsh", "Bert Brokaw", "Beth Dagle", "Betsey Stang", "Brennen Cain", "Caitlin Dagle", "Caitlin Olsen", "Carla Markell", "Carmel Murphy", "Carol Dandolos", "Caroline Ehlich", "Cheryl Greene", "Chris Davis", "Christopher Cottrell", "Christopher Dagle", "Ciara Walsh", "Claire Cottrell", "Claire Cunnane", "Claudia Stankiewicz", "Connor Walsh", "Courtney Botero-Murphy", "Courtney McGregor", "Cris Dush", "Damian Destefano", "Daniel Columbo", "David Cawley", "Debbie Cottrell", "Debi Donnelly", "Delia Cawley", "Denis Cottrell", "Denis Laverty", "Dick Donnelly", "Dimitri Dandolos", "Dylan Hughes", "Elizabeth Guillen", "Ellen Stevens", "Ellen Waters", "Emma Cawley", "Eoin Brady", "Erin Dugan", "Eugene Cottrell", "Fernando Sanchez", "Finola Brady", "Frances Rufli-Feeney", "Frieda Davis", "Garrett Dush", "Geoff Goodwin", "George Diver", "Gerry Cottrell", "Hannah Reichenbach", "Imelda Walsh", "Inaara Ali", "Jack Markell", "Jacqueline Sanchez", "James Grant", "Jennifer McClinton", "Jettie Dush", "Joe Prunty", "John Brady", "John Davis", "John Donnelly", "Jonathan Cawley", "Jonathan Laverty", "Jordan Botero-Murphy", "Joseph Prunty", "Joseph Rittenhouse", "Joshua Potvin", "Julianne Aldous", "Katherine Rufli", "Kathleen Cottrell", "Kathleen Prunty", "Katie Dush", "Katie Kelsh", "Katie Lee", "Katie McGregor", "Kennedy Bennett", "Kevin Diamond", "Kevin Donnelly", "Kevin Walsh", "Kira Stevens", "Laura Cottrell", "Laura Prunty", "Liam Cottrell", "Lisa Blunt Rochester", "Lorna Dennehy", "Lucy Wolfe", "Luke Jackson", "Macey Matthews", "Mannie Boyle", "Maria Ferrara", "Maria Zece\u00f1a", "Marie Walsh", "Mark Lincoln", "Martin Dean", "Mary Goodwin", "Mary Kohl", "Mary Walsh", "Maura Walsh", "Meghan Wallace", "Miah Dennehy", "Michael Cawley", "Michael Cottrell", "Mich\u00e9al Walsh", "Mick Sicchio", "Mick Walsh", "Miki Nakano", "Nicholas Coe", "Nicole Braga", "Niko Dandolos", "Parker Stang", "Pat Walsh", "Patrick Dagle", "Paul Cawley", "Paul Hartman", "Philomena Cottrell", "Philomena Laverty", "Rachel Potvin", "Richard Walsh", "Robert Dougherty", "Robyn Jackson", "Roisin Walsh", "Ryan Dush", "R\u00f3is\u00edn Walsh", "Sal Damiani", "Samin Mirfakhrai", "Samuel Silverman", "Sean McNamee", "Shane Walsh", "Shea Hermann", "Shelly Rasnick", "Sinead Laverty", "Stephanie Grant", "Steve Gallagher", "Suzanne Gibbons", "Tal Levi", "Tanna Smith", "Terri Damiani", "Thomas Stevens", "Tommy Stevens", "Traci Dush", "Victoria Selover Brokaw", "Vincent Mancini", "Walker Luke", "Wellesley Daniels", "West Donnelly", "William Feeney", "Yudy Hartman"];
+var PARTY_MAP = {"Laura Cottrell": ["Laura Cottrell", "Andrew Donnelly"], "Andrew Donnelly": ["Laura Cottrell", "Andrew Donnelly"], "Eugene Cottrell": ["Eugene Cottrell", "Philomena Cottrell", "Michael Cottrell"], "Philomena Cottrell": ["Eugene Cottrell", "Philomena Cottrell", "Michael Cottrell"], "Michael Cottrell": ["Michael Cottrell", "Claire Cottrell"], "Mary Walsh": ["Mary Walsh"], "Mick Walsh": ["Mick Walsh", "Marie Walsh"], "Marie Walsh": ["Mick Walsh", "Marie Walsh"], "Shane Walsh": ["Shane Walsh", "Tal Levi"], "Tal Levi": ["Shane Walsh", "Tal Levi"], "Connor Walsh": ["Connor Walsh", "R\u00f3is\u00edn Walsh"], "R\u00f3is\u00edn Walsh": ["Connor Walsh", "R\u00f3is\u00edn Walsh"], "Mich\u00e9al Walsh": ["Mich\u00e9al Walsh"], "Miah Dennehy": ["Miah Dennehy", "Anne Dennehy"], "Anne Dennehy": ["Miah Dennehy", "Anne Dennehy"], "Lorna Dennehy": ["Lorna Dennehy"], "Alan Dennehy": ["Alan Dennehy", "Katie Lee"], "Katie Lee": ["Alan Dennehy", "Katie Lee"], "Michael Cawley": ["Michael Cawley", "Delia Cawley"], "Delia Cawley": ["Michael Cawley", "Delia Cawley"], "Paul Cawley": ["Paul Cawley", "Emma Cawley"], "Emma Cawley": ["Paul Cawley", "Emma Cawley"], "Jonathan Cawley": ["Jonathan Cawley", "Ellen Waters"], "Ellen Waters": ["Jonathan Cawley", "Ellen Waters"], "David Cawley": ["David Cawley"], "John Brady": ["John Brady", "Finola Brady", "Eoin Brady", "Benjamin Brady"], "Finola Brady": ["John Brady", "Finola Brady", "Eoin Brady", "Benjamin Brady"], "Eoin Brady": ["John Brady", "Finola Brady", "Eoin Brady", "Benjamin Brady"], "Benjamin Brady": ["John Brady", "Finola Brady", "Eoin Brady", "Benjamin Brady"], "Bernie Walsh": ["Bernie Walsh"], "Pat Walsh": ["Pat Walsh", "Imelda Walsh"], "Imelda Walsh": ["Pat Walsh", "Imelda Walsh"], "Richard Walsh": ["Richard Walsh", "Maura Walsh", "Ciara Walsh", "Roisin Walsh", "Kevin Walsh"], "Maura Walsh": ["Richard Walsh", "Maura Walsh", "Ciara Walsh", "Roisin Walsh", "Kevin Walsh"], "Ciara Walsh": ["Richard Walsh", "Maura Walsh", "Ciara Walsh", "Roisin Walsh", "Kevin Walsh"], "Roisin Walsh": ["Richard Walsh", "Maura Walsh", "Ciara Walsh", "Roisin Walsh", "Kevin Walsh"], "Kevin Walsh": ["Richard Walsh", "Maura Walsh", "Ciara Walsh", "Roisin Walsh", "Kevin Walsh"], "Denis Laverty": ["Denis Laverty", "Philomena Laverty"], "Philomena Laverty": ["Denis Laverty", "Philomena Laverty"], "Martin Dean": ["Martin Dean", "Bernadette Dean"], "Bernadette Dean": ["Martin Dean", "Bernadette Dean"], "Geoff Goodwin": ["Geoff Goodwin", "Mary Goodwin"], "Mary Goodwin": ["Geoff Goodwin", "Mary Goodwin"], "Denis Cottrell": ["Denis Cottrell"], "John Davis": ["John Davis", "Frieda Davis"], "Frieda Davis": ["John Davis", "Frieda Davis"], "Claire Cottrell": ["Michael Cottrell", "Claire Cottrell"], "Christopher Cottrell": ["Christopher Cottrell"], "Debbie Cottrell": ["Debbie Cottrell"], "Liam Cottrell": ["Liam Cottrell", "Amy [Joy-] Cottrell"], "Amy [Joy-] Cottrell": ["Liam Cottrell", "Amy [Joy-] Cottrell"], "Gerry Cottrell": ["Gerry Cottrell", "Kathleen Cottrell"], "Kathleen Cottrell": ["Gerry Cottrell", "Kathleen Cottrell"], "Mark Lincoln": ["Mark Lincoln", "Sinead Laverty"], "Sinead Laverty": ["Mark Lincoln", "Sinead Laverty"], "Jonathan Laverty": ["Jonathan Laverty"], "Joe Prunty": ["Joe Prunty", "Kathleen Prunty"], "Kathleen Prunty": ["Joe Prunty", "Kathleen Prunty"], "Joseph Prunty": ["Joseph Prunty", "Jennifer McClinton"], "Jennifer McClinton": ["Joseph Prunty", "Jennifer McClinton"], "Mannie Boyle": ["Mannie Boyle", "Carmel Murphy"], "Carmel Murphy": ["Mannie Boyle", "Carmel Murphy"], "Aine Boyle": ["Aine Boyle", "Mary Kohl"], "Mary Kohl": ["Aine Boyle", "Mary Kohl"], "William Feeney": ["William Feeney", "Frances Rufli-Feeney"], "Frances Rufli-Feeney": ["William Feeney", "Frances Rufli-Feeney"], "Katherine Rufli": ["Katherine Rufli"], "Steve Gallagher": ["Steve Gallagher", "Claire Cunnane"], "Claire Cunnane": ["Steve Gallagher", "Claire Cunnane"], "Sean McNamee": ["Sean McNamee", "Laura Prunty"], "Laura Prunty": ["Sean McNamee", "Laura Prunty"], "Tommy Stevens": ["Tommy Stevens", "April Guilotti"], "April Guilotti": ["Tommy Stevens", "April Guilotti"], "Walker Luke": ["Walker Luke"], "Bert Brokaw": ["Bert Brokaw", "Victoria Selover Brokaw"], "Victoria Selover Brokaw": ["Bert Brokaw", "Victoria Selover Brokaw"], "Paul Hartman": ["Paul Hartman", "Yudy Hartman"], "Yudy Hartman": ["Paul Hartman", "Yudy Hartman"], "Shea Hermann": ["Shea Hermann"], "Kevin Diamond": ["Kevin Diamond", "Caroline Ehlich"], "Caroline Ehlich": ["Kevin Diamond", "Caroline Ehlich"], "Vincent Mancini": ["Vincent Mancini", "Erin Dugan"], "Erin Dugan": ["Vincent Mancini", "Erin Dugan"], "Samuel Silverman": ["Samuel Silverman", "Julianne Aldous"], "Julianne Aldous": ["Samuel Silverman", "Julianne Aldous"], "Daniel Columbo": ["Daniel Columbo", "Aliza Ottenheimer"], "Aliza Ottenheimer": ["Daniel Columbo", "Aliza Ottenheimer"], "Elizabeth Guillen": ["Elizabeth Guillen", "Maria Zece\u00f1a"], "Maria Zece\u00f1a": ["Elizabeth Guillen", "Maria Zece\u00f1a"], "Allie Nichols": ["Allie Nichols"], "Ben Rhind": ["Ben Rhind", "Claudia Stankiewicz"], "Claudia Stankiewicz": ["Ben Rhind", "Claudia Stankiewicz"], "Samin Mirfakhrai": ["Samin Mirfakhrai", "Ali Youssef"], "Ali Youssef": ["Samin Mirfakhrai", "Ali Youssef"], "Kennedy Bennett": ["Kennedy Bennett"], "Miki Nakano": ["Miki Nakano"], "Brennen Cain": ["Brennen Cain"], "Mick Sicchio": ["Mick Sicchio", "Maria Ferrara"], "Maria Ferrara": ["Mick Sicchio", "Maria Ferrara"], "Wellesley Daniels": ["Wellesley Daniels"], "Jordan Botero-Murphy": ["Jordan Botero-Murphy", "Courtney Botero-Murphy"], "Courtney Botero-Murphy": ["Jordan Botero-Murphy", "Courtney Botero-Murphy"], "James Grant": ["James Grant", "Stephanie Grant"], "Stephanie Grant": ["James Grant", "Stephanie Grant"], "Joseph Rittenhouse": ["Joseph Rittenhouse", "Shelly Rasnick"], "Shelly Rasnick": ["Joseph Rittenhouse", "Shelly Rasnick"], "George Diver": ["George Diver"], "Lucy Wolfe": ["Lucy Wolfe"], "John Donnelly": ["John Donnelly", "Debi Donnelly"], "Debi Donnelly": ["John Donnelly", "Debi Donnelly"], "Cris Dush": ["Cris Dush", "Traci Dush"], "Traci Dush": ["Cris Dush", "Traci Dush"], "Ryan Dush": ["Ryan Dush", "Jettie Dush"], "Jettie Dush": ["Ryan Dush", "Jettie Dush"], "Garrett Dush": ["Garrett Dush", "Katie Dush"], "Katie Dush": ["Garrett Dush", "Katie Dush"], "Sal Damiani": ["Sal Damiani", "Terri Damiani"], "Terri Damiani": ["Sal Damiani", "Terri Damiani"], "Joshua Potvin": ["Joshua Potvin", "Rachel Potvin"], "Rachel Potvin": ["Joshua Potvin", "Rachel Potvin"], "Bailey Braga": ["Bailey Braga", "Nicole Braga"], "Nicole Braga": ["Bailey Braga", "Nicole Braga"], "Patrick Dagle": ["Patrick Dagle", "Beth Dagle"], "Beth Dagle": ["Patrick Dagle", "Beth Dagle"], "Caitlin Dagle": ["Caitlin Dagle", "Dylan Hughes"], "Dylan Hughes": ["Caitlin Dagle", "Dylan Hughes"], "Christopher Dagle": ["Christopher Dagle", "Tanna Smith"], "Tanna Smith": ["Christopher Dagle", "Tanna Smith"], "Dick Donnelly": ["Dick Donnelly"], "Kevin Donnelly": ["Kevin Donnelly", "Suzanne Gibbons"], "Suzanne Gibbons": ["Kevin Donnelly", "Suzanne Gibbons"], "West Donnelly": ["West Donnelly", "Inaara Ali"], "Inaara Ali": ["West Donnelly", "Inaara Ali"], "Ann Ross": ["Ann Ross"], "Thomas Stevens": ["Thomas Stevens", "Ellen Stevens"], "Ellen Stevens": ["Thomas Stevens", "Ellen Stevens"], "Kira Stevens": ["Kira Stevens"], "Dimitri Dandolos": ["Dimitri Dandolos", "Carol Dandolos"], "Carol Dandolos": ["Dimitri Dandolos", "Carol Dandolos"], "Niko Dandolos": ["Niko Dandolos"], "Angie Craig": ["Angie Craig", "Cheryl Greene"], "Cheryl Greene": ["Angie Craig", "Cheryl Greene"], "Jack Markell": ["Jack Markell", "Carla Markell"], "Carla Markell": ["Jack Markell", "Carla Markell"], "Lisa Blunt Rochester": ["Lisa Blunt Rochester"], "Chris Davis": ["Chris Davis", "Macey Matthews"], "Macey Matthews": ["Chris Davis", "Macey Matthews"], "Robert Dougherty": ["Robert Dougherty"], "Luke Jackson": ["Luke Jackson", "Robyn Jackson"], "Robyn Jackson": ["Luke Jackson", "Robyn Jackson"], "Fernando Sanchez": ["Fernando Sanchez", "Jacqueline Sanchez"], "Jacqueline Sanchez": ["Fernando Sanchez", "Jacqueline Sanchez"], "Courtney McGregor": ["Courtney McGregor", "Katie McGregor"], "Katie McGregor": ["Courtney McGregor", "Katie McGregor"], "Parker Stang": ["Parker Stang", "Betsey Stang"], "Betsey Stang": ["Parker Stang", "Betsey Stang"], "Damian Destefano": ["Damian Destefano", "Caitlin Olsen"], "Caitlin Olsen": ["Damian Destefano", "Caitlin Olsen"], "Meghan Wallace": ["Meghan Wallace"], "Nicholas Coe": ["Nicholas Coe", "Hannah Reichenbach"], "Hannah Reichenbach": ["Nicholas Coe", "Hannah Reichenbach"], "Katie Kelsh": ["Katie Kelsh"]};
+
+
+
+document.getElementById('pwIn').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') checkPw();
+});
+
+function checkPw() {
+  var raw = document.getElementById('pwIn').value;
+  var v = raw.trim().toLowerCase().split(' ').join('');
+  if (v === 'july2') {
+    document.getElementById('pwErr').innerHTML = '&nbsp;';
+    openEnvelope();
+  } else {
+    document.getElementById('pwErr').textContent = 'Incorrect - please try again';
+    document.getElementById('pwIn').value = '';
+    document.getElementById('pwIn').focus();
+  }
+}
+
+/* Auto-flip on load: show front briefly, then flip to back and reveal password */
+window.addEventListener('load', function() {
+  var flipDelay = prefersReducedMotion() ? 0 : 2200;
+  var afterFlip = prefersReducedMotion() ? 200 : 1500;
+  setTimeout(function() {
+    document.querySelector('.envelope').classList.add('flip');
+    setTimeout(function() {
+      document.getElementById('envPw').classList.add('show');
+      if (!prefersReducedMotion()) document.getElementById('pwIn').focus();
+    }, afterFlip);
+  }, flipDelay);
+});
+
+var envOpened = false;
+
+function openEnvelope() {
+  if (envOpened) return;
+  envOpened = true;
+
+  document.getElementById('envPw').classList.add('hide');
+  document.getElementById('waxSeal').classList.add('hide');
+
+  var d1 = prefersReducedMotion() ? 0 : 120;
+  var d2 = prefersReducedMotion() ? 80 : 1600;
+  var d3 = prefersReducedMotion() ? 600 : 5000;
+
+  setTimeout(function() {
+    document.getElementById('envFlapGroup').classList.add('open');
+  }, d1);
+
+  setTimeout(function() {
+    document.getElementById('envCard').classList.add('rise');
+  }, d2);
+
+  setTimeout(function() {
+    launchSite();
+  }, d3);
+}
+
+function launchSite() {
+  var main = document.getElementById('main');
+  var envScreen = document.getElementById('env-screen');
+
+  /* Step 1: add the transition NOW (after first paint, so initial scale(0.05)
+     was already rendered without a transition — no flash to scale(1)) */
+  main.style.transition = prefersReducedMotion()
+    ? 'none'
+    : 'visibility 0s, opacity 1s ease, transform 1s cubic-bezier(.15,.85,.25,1)';
+
+  /* Step 2: trigger the unfurl on next frame */
+  requestAnimationFrame(function() {
+    requestAnimationFrame(function() {
+      main.classList.add('unfurl');
+      document.getElementById('nav').classList.add('show');
+      /* fade envelope away as site expands */
+      envScreen.classList.add('exit');
+    });
+  });
+
+  /* Step 3: start everything else after site is visible */
+  var innerDelay = prefersReducedMotion() ? 0 : 600;
+  setTimeout(function() {
+    startCd();
+    initParallax();
+    initReveal();
+    /* Show RSVP popup after first meaningful scroll, not immediately */
+    var popupShown = false;
+    function onFirstScroll() {
+      if (popupShown || window.scrollY < 80) return;
+      popupShown = true;
+      window.removeEventListener('scroll', onFirstScroll);
+      setTimeout(showPopup, prefersReducedMotion() ? 0 : 600);
+    }
+    window.addEventListener('scroll', onFirstScroll, { passive: true });
+  }, innerDelay);
+}
+
+function showPopup() {
+  document.getElementById('rsvp-popup').classList.add('show');
+}
+function dismissPopup() {
+  document.getElementById('rsvp-popup').classList.remove('show');
+}
+function goRsvp() {
+  dismissPopup();
+  setTimeout(function() {
+    document.getElementById('rsvp').scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
+  }, 350);
+}
+
+function startCd() {
+  function u() {
+    var diff = new Date('2027-07-02T15:00:00+01:00') - new Date();
+    if (diff <= 0) {
+      document.getElementById('cd').innerHTML = '<p style="font-family:Cormorant Garamond,serif;font-size:1.2rem;font-style:italic;color:rgba(245,243,235,.88)">Today is the day.</p>';
+      return;
+    }
+    document.getElementById('cd-d').textContent = String(Math.floor(diff / 86400000)).padStart(2, '0');
+    document.getElementById('cd-h').textContent = String(Math.floor(diff % 86400000 / 3600000)).padStart(2, '0');
+    document.getElementById('cd-m').textContent = String(Math.floor(diff % 3600000 / 60000)).padStart(2, '0');
+    document.getElementById('cd-s').textContent = String(Math.floor(diff % 60000 / 1000)).padStart(2, '0');
+  }
+  u(); setInterval(u, 1000);
+}
+
+function initParallax() {
+  var navEl = document.getElementById('nav');
+  var navScrolled = (window.scrollY || document.documentElement.scrollTop) > 52;
+  if (navScrolled) navEl.classList.add('scrolled');
+  function updateNav() {
+    var y = window.scrollY || document.documentElement.scrollTop;
+    if (!navScrolled && y > 52) navScrolled = true;
+    else if (navScrolled && y < 28) navScrolled = false;
+    navEl.classList.toggle('scrolled', navScrolled);
+  }
+  window.addEventListener('scroll', updateNav, { passive: true });
+  updateNav();
+
+  if (prefersReducedMotion()) return;
+
+  var hImg   = document.querySelector('.h-img');
+  var rsvpBg = document.getElementById('rsvpBg');
+  var detSi  = document.querySelector('#det .si');
+  var travSi = document.querySelector('#trav .si');
+  var galSi  = document.querySelector('#gal .si');
+  var ticking = false;
+
+  function onScroll() {
+    if (!ticking) { requestAnimationFrame(update); ticking = true; }
+  }
+  function update() {
+    ticking = false;
+    var sy = window.scrollY, wh = window.innerHeight;
+
+    hImg.style.transform = 'translateY(' + (sy * 0.3) + 'px)';
+
+    var dr = document.getElementById('det').getBoundingClientRect();
+    if (dr.bottom > 0 && dr.top < wh)
+      detSi.style.transform = 'translateY(' + ((dr.top - wh) * 0.055) + 'px)';
+
+    var tr = document.getElementById('trav').getBoundingClientRect();
+    if (tr.bottom > 0 && tr.top < wh)
+      travSi.style.transform = 'translateY(' + ((tr.top - wh) * 0.065) + 'px)';
+
+    var gr = document.getElementById('gal').getBoundingClientRect();
+    if (gr.bottom > 0 && gr.top < wh)
+      galSi.style.transform = 'translateY(' + ((gr.top - wh) * 0.05) + 'px)';
+
+    var rr = document.getElementById('rsvp').getBoundingClientRect();
+    if (rr.bottom > 0 && rr.top < wh)
+      rsvpBg.style.transform = 'translateY(' + ((rr.top + rr.height / 2 - wh / 2) * 0.28) + 'px)';
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  update();
+}
+
+function initReveal() {
+  if (prefersReducedMotion()) {
+    document.querySelectorAll('.rv, .rv-l, .rv-r').forEach(function(el) { el.classList.add('on'); });
+    initTimeline();
+    return;
+  }
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e, i) {
+      if (e.isIntersecting) {
+        setTimeout(function() { e.target.classList.add('on'); }, i * 80);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.rv, .rv-l, .rv-r').forEach(function(el) { obs.observe(el); });
+  initTimeline();
+}
+
+function initTimeline() {
+  var tl = document.getElementById('tl');
+  if (!tl) return;
+  var fill = document.getElementById('tlFill');
+  var items = Array.from(tl.querySelectorAll('[data-tl]'));
+
+  if (prefersReducedMotion()) {
+    tl.classList.add('js-tl');
+    fill.style.height = '100%';
+    items.forEach(function(item) {
+      var dot  = item.querySelector('[data-dot]');
+      var card = item.querySelector('.tl-card');
+      if (dot)  dot.classList.add('lit');
+      if (card) card.classList.add('on');
+    });
+    return;
+  }
+
+  function reveal() {
+    var wh = window.innerHeight;
+    var tlRect = tl.getBoundingClientRect();
+    var progress = Math.max(0, Math.min(1, (wh * 0.65 - tlRect.top) / tlRect.height));
+    fill.style.height = (progress * 100) + '%';
+    items.forEach(function(item) {
+      var r = item.getBoundingClientRect();
+      if (r.top + r.height * 0.3 < wh * 0.88) {
+        var dot  = item.querySelector('[data-dot]');
+        var card = item.querySelector('.tl-card');
+        if (dot)  dot.classList.add('lit');
+        if (card) card.classList.add('on');
+      }
+    });
+  }
+
+  requestAnimationFrame(function() {
+    requestAnimationFrame(function() {
+      tl.classList.add('js-tl');
+      reveal();
+    });
+  });
+
+  window.addEventListener('scroll', reveal, { passive: true });
+}
+
+var selectedGuest = null;
+var activeSuggIdx = -1;
+
+function normalise(s) {
+  return s.toLowerCase().replace(/[^a-z ]/g, '').trim();
+}
+
+function searchGuests(val) {
+  var box = document.getElementById('suggestions');
+  var err = document.getElementById('lookup-err');
+  err.innerHTML = '&nbsp;';
+  activeSuggIdx = -1;
+  if (val.trim().length < 2) { box.style.display = 'none'; box.innerHTML = ''; return; }
+  var q = normalise(val);
+  var matches = GUEST_LIST.filter(function(n) {
+    return normalise(n).indexOf(q) !== -1;
+  }).slice(0, 8);
+  if (matches.length === 0) { box.style.display = 'none'; box.innerHTML = ''; return; }
+  box.innerHTML = matches.map(function(n, i) {
+    var hi = n.replace(new RegExp('(' + val.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + ')', 'i'), '<mark>$1</mark>');
+    return '<div class="suggestion-item" data-name="' + n + '" onmousedown="selectGuest(\'' + n.replace(/'/g,"\\'") + '\')">' + hi + '</div>';
+  }).join('');
+  box.style.display = 'block';
+}
+
+function searchKeydown(e) {
+  var box = document.getElementById('suggestions');
+  var items = box.querySelectorAll('.suggestion-item');
+  if (!items.length) return;
+  if (e.key === 'ArrowDown') {
+    e.preventDefault();
+    activeSuggIdx = Math.min(activeSuggIdx + 1, items.length - 1);
+    items.forEach(function(el,i){ el.classList.toggle('active', i === activeSuggIdx); });
+  } else if (e.key === 'ArrowUp') {
+    e.preventDefault();
+    activeSuggIdx = Math.max(activeSuggIdx - 1, 0);
+    items.forEach(function(el,i){ el.classList.toggle('active', i === activeSuggIdx); });
+  } else if (e.key === 'Enter') {
+    e.preventDefault();
+    if (activeSuggIdx >= 0 && items[activeSuggIdx]) {
+      selectGuest(items[activeSuggIdx].getAttribute('data-name'));
+    } else if (items.length === 1) {
+      selectGuest(items[0].getAttribute('data-name'));
+    } else {
+      confirmName();
+    }
+  }
+}
+
+function selectGuest(name) {
+  selectedGuest = name;
+  var nf = document.getElementById('nameField');
+  nf.oninput = null;  // pause search while we set up
+  nf.value = name;
+  document.getElementById('suggestions').style.display = 'none';
+  document.getElementById('lookup-err').innerHTML = '&nbsp;';
+
+  // Look up the full party from PARTY_MAP
+  var party = (PARTY_MAP[name] || [name]);
+  var partySize = party.length;
+
+  // Store party on form for submission
+  var form = document.getElementById('rf');
+  form.dataset.party = party.join(', ');
+
+  // Set guest count to match party size
+  var sel = document.getElementById('guestCount');
+  // Add option if needed
+  while (sel.options.length < partySize) {
+    var opt = document.createElement('option');
+    opt.value = opt.text = String(sel.options.length + 1);
+    sel.appendChild(opt);
+  }
+  // Clear all selected, then set correct one
+  for (var i = 0; i < sel.options.length; i++) {
+    sel.options[i].selected = (sel.options[i].value === String(partySize));
+  }
+
+  // Set greeting
+  var fname = name.split(' ')[0];
+  var greeting = partySize > 1
+    ? 'Welcome, ' + fname + '. We’ve saved seats for ' + party.join(' & ') + '.'
+    : 'Welcome, ' + fname + '. We are so glad you are here.';
+  // Show greeting
+  var greetingEl = document.getElementById('rsvp-greeting');
+  greetingEl.textContent = greeting;
+  greetingEl.style.display = 'block';
+
+  // Show party list if more than one person
+  var partyListEl = document.getElementById('rsvp-party-list');
+  if (partySize > 1) {
+    var listHTML = '<span style="font-family:Jost,sans-serif;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:#6B9170;display:block;margin-bottom:.4rem">This invitation includes</span>';
+    listHTML += party.map(function(n) {
+      return '<span style="display:block;font-family:\'Cormorant Garamond\',serif;font-size:1rem;color:var(--blue-dark);">' + n + '</span>';
+    }).join('');
+    partyListEl.innerHTML = listHTML;
+    partyListEl.style.display = 'block';
+  } else {
+    partyListEl.style.display = 'none';
+  }
+
+  // Re-enable search
+  document.getElementById('nameField').oninput = function() { searchGuests(this.value); };
+
+  // Show form
+  form.style.display = 'flex';
+}
+
+function confirmName() {
+  var val = document.getElementById('nameSearch').value.trim();
+  var err = document.getElementById('lookup-err');
+  if (!val) { err.textContent = 'Please enter your name to find your invitation'; return; }
+  var match = GUEST_LIST.find(function(n) {
+    return n.toLowerCase() === val.toLowerCase();
+  });
+  if (match) { selectGuest(match); }
+  else { err.textContent = 'We could not find that name — please check your spelling or try a nickname'; }
+}
+
+function doRsvp(e) {
+  e.preventDefault();
+
+  var form = document.getElementById('rf');
+  var btn  = form.querySelector('.rsvp-submit');
+  var ty   = document.getElementById('ty');
+
+  var hp = document.getElementById('rsvpCompany');
+  if (hp && hp.value.replace(/\s/g, '')) {
+    form.style.display = 'none';
+    ty.style.display = 'block';
+    return;
+  }
+
+  // Gather values
+  var att      = (form.querySelector('input[name="att"]:checked') || {}).value || '';
+  var email    = document.getElementById('emailField').value;
+  var guests   = document.getElementById('guestCount').value;
+  var events   = document.getElementById('eventsSelect').value;
+  var dietary  = document.getElementById('dietaryField').value;
+  var note     = document.getElementById('noteField').value;
+
+  var payload = {
+    name:     (function() {
+      var typed = document.getElementById('nameField').value.trim();
+      if (form.dataset.party) return form.dataset.party;
+      var p = PARTY_MAP[typed];
+      return p ? p.join(', ') : typed;
+    })(),
+    email:    email,
+    attending: att === 'yes' ? 'Yes' : 'No',
+    guests:   guests,
+    events:   events,
+    dietary:  dietary,
+    note:     note,
+    submitted: new Date().toISOString()
+  };
+
+  // Disable button while submitting
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  var SHEET_URL = 'https://script.google.com/macros/s/AKfycbzTXn2bjszcWMaK391NEiz2A-qe5yx1EdBKcayuU10lAdjPR8ykbi7Kryp8d-yiwS3f/exec';
+
+  fetch(SHEET_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  })
+  .then(function() {
+    form.style.display = 'none';
+    ty.style.display = 'block';
+  })
+  .catch(function() {
+    form.style.display = 'none';
+    ty.style.display = 'block';
+  });
+}
+
+
+function toggleNav() {
+  var links = document.getElementById('navLinks');
+  var btn = document.getElementById('navHamburger');
+  links.classList.toggle('open');
+  btn.classList.toggle('open');
+}
+function closeNav() {
+  document.getElementById('navLinks').classList.remove('open');
+  document.getElementById('navHamburger').classList.remove('open');
+}
+</script>
+
+<script>
+(function(){
+  var castle  = document.getElementById('venueCastle');
+  var sky     = document.getElementById('venueSky');
+  var section = document.getElementById('venue');
+  var reduce = typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function tick(){
+    var rect = section.getBoundingClientRect();
+    var sH   = section.offsetHeight;
+    var vH   = window.innerHeight;
+
+    /* p = 0 when section top hits bottom of viewport, 1 when section bottom hits bottom of viewport */
+    var p = Math.max(0, Math.min(1, (vH - rect.top) / (sH + vH)));
+
+    /* Castle: smooth ease-out rise */
+    var ease    = 1 - Math.pow(1 - p, 5.5);
+    var castleY = 72 + (-18 - 72) * ease;
+    castle.style.transform = 'translateX(-50%) translateY(' + castleY.toFixed(2) + '%)';
+
+    /* Sky drifts slowly upward */
+    sky.style.transform = 'translateY(' + (-p * 5).toFixed(2) + '%)';
+  }
+
+  if (reduce) {
+    tick();
+    document.querySelectorAll('.venue-anim').forEach(function(el){ el.classList.add('vis'); });
+    return;
+  }
+
+  window.addEventListener('scroll', tick, {passive:true});
+  tick();
+
+  var anims = document.querySelectorAll('.venue-anim');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('vis'); io.unobserve(e.target); }
+    });
+  },{threshold:0.12});
+  anims.forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>
