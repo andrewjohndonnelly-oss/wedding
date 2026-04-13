@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <style>
+    .l,.a{font-family:Cormorant Garamond,Georgia,serif;font-style:italic;font-weight:300;fill:#1C2B4A}
+    .amp{font-family:Cormorant Garamond,Georgia,serif;font-style:italic;font-weight:300;fill:#6B9170}
+    @media (prefers-color-scheme:dark){
+      .l,.a{fill:rgba(255,255,255,.85)}
+      .amp{fill:rgba(246,191,207,.85)}
+    }
+  </style>
+  <text class="l" x="10" y="40" font-size="36">L</text>
+  <text class="amp" x="19" y="66" font-size="22">&amp;</text>
+  <text class="a" x="28" y="92" font-size="36">A</text>
+</svg>
