@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Laura and Andrew//Wedding//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:laura-andrew-20270702@wedding
+DTSTAMP:20260413T120000Z
+DTSTART:20270702T140000Z
+DTEND:20270702T170000Z
+SUMMARY:Laura & Andrew — Wedding
+DESCRIPTION:Ceremony at The Lodge at Ashford Castle.\nPlease be seated by 2:45 pm.
+LOCATION:The Lodge at Ashford Castle\, Cong\, County Mayo\, Ireland
+END:VEVENT
+END:VCALENDAR
